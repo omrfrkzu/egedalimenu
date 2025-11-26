@@ -98,7 +98,7 @@
   border-radius: 24px;
   padding: 22px;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 25px 45px rgba(15, 23, 42, 0.12);
   border: 2px solid transparent;
   position: relative;
@@ -109,6 +109,8 @@
   min-height: 170px;
   color: var(--color-text);
   overflow: hidden;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .table-card::after {
@@ -128,7 +130,7 @@
 }
 
 .table-card:hover {
-  transform: translateY(-4px);
+  transform: translate3d(0, -4px, 0);
   box-shadow: 0 35px 65px rgba(15, 23, 42, 0.18);
   border-color: rgba(16, 185, 129, 0.5);
 }

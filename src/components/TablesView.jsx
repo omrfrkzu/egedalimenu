@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, memo } from 'react'
 import './TablesView.css'
 
 const TablesView = ({
@@ -177,5 +177,5 @@ const TablesView = ({
   )
 }
 
-export default TablesView
+export default memo(TablesView)
 

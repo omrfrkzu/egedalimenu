@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo, useCallback, memo } from 'react'
 import { Plus, Check, X, Minus, Info } from 'lucide-react'
 import './MenuView.css'
 
@@ -251,10 +251,10 @@ const MenuView = ({
     }
   }, [showTableSelector, activeFloor, tablesByFloor])
 
-  const handleItemClick = (item) => {
+  const handleItemClick = useCallback((item) => {
     if (!item.description) return
     setSelectedItem(item)
-  }
+  }, [])
 
   if (loading) {
     return (
@@ -430,6 +430,8 @@ const MenuView = ({
                   <img 
                     src={item.image} 
                     alt={item.name}
+                    loading="lazy"
+                    decoding="async"
                     onError={(e) => {
                       if (e.target && e.target.nextSibling) {
                         e.target.style.display = 'none'
@@ -605,5 +607,5 @@ const MenuView = ({
   )
 }
 
-export default MenuView
+export default memo(MenuView)
 
