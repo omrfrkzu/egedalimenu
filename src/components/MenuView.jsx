@@ -279,7 +279,6 @@ const MenuView = ({
             {!selectedTable ? (
               <div className="table-selector-trigger" onClick={() => setShowTableSelector(true)}>
                 <div className="trigger-content">
-                  <span className="trigger-icon">🪑</span>
                   <div className="trigger-text">
                     <span className="trigger-label">Masa Seçin</span>
                     <span className="trigger-hint">Sipariş vermek için masa seçin</span>
