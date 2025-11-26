@@ -461,7 +461,7 @@ const MenuView = ({
                 <p className="menu-item-price">{item.price.toFixed(2)} ₺</p>
               )}
             </div>
-            {(isCustomerMode || (selectedTable && !isCustomerMode && onAddItem)) && (
+            {(!isCustomerMode || (isCustomerMode && selectedTable)) && (
               <button
                 className={`menu-item-add-btn ${addedItems.has(item.id) ? 'added' : ''}`}
                 onClick={(e) => {
