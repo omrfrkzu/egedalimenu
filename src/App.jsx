@@ -29,14 +29,35 @@ function App() {
   const [activeTab, setActiveTab] = useState('masalar')
   const [selectedTable, setSelectedTable] = useState(null)
   const [selectedAccountId, setSelectedAccountId] = useState(null)
-  const [orders, setOrders] = useState({})
+  const [orders, setOrders] = useState(() => {
+    try {
+      const saved = localStorage.getItem('restaurant_orders')
+      return saved ? JSON.parse(saved) : {}
+    } catch {
+      return {}
+    }
+  })
   const [isMobile, setIsMobile] = useState(false)
   const [isOrderPanelVisible, setIsOrderPanelVisible] = useState(false)
   const [showMenuOnly, setShowMenuOnly] = useState(false)
-  const [tableCreatedMap, setTableCreatedMap] = useState({})
+  const [tableCreatedMap, setTableCreatedMap] = useState(() => {
+    try {
+      const saved = localStorage.getItem('restaurant_table_created_map')
+      return saved ? JSON.parse(saved) : {}
+    } catch {
+      return {}
+    }
+  })
   const [notifications, setNotifications] = useState([])
   const [showNotifications, setShowNotifications] = useState(false)
-  const [occupiedTables, setOccupiedTables] = useState({}) // { tableId: true/false }
+  const [occupiedTables, setOccupiedTables] = useState(() => {
+    try {
+      const saved = localStorage.getItem('restaurant_occupied_tables')
+      return saved ? JSON.parse(saved) : {}
+    } catch {
+      return {}
+    }
+  }) // { tableId: true/false }
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [successMessage, setSuccessMessage] = useState({ total: 0, message: '', title: 'Siparişiniz Alındı!' })
   const [reportStats, setReportStats] = useState({
@@ -263,6 +284,33 @@ function App() {
     }
   }, [isMobile, showMenuOnly])
 
+  // orders değiştiğinde localStorage'a kaydet
+  useEffect(() => {
+    try {
+      localStorage.setItem('restaurant_orders', JSON.stringify(orders))
+    } catch (error) {
+      console.error('orders kaydedilemedi:', error)
+    }
+  }, [orders])
+
+  // occupiedTables değiştiğinde localStorage'a kaydet
+  useEffect(() => {
+    try {
+      localStorage.setItem('restaurant_occupied_tables', JSON.stringify(occupiedTables))
+    } catch (error) {
+      console.error('occupiedTables kaydedilemedi:', error)
+    }
+  }, [occupiedTables])
+
+  // tableCreatedMap değiştiğinde localStorage'a kaydet
+  useEffect(() => {
+    try {
+      localStorage.setItem('restaurant_table_created_map', JSON.stringify(tableCreatedMap))
+    } catch (error) {
+      console.error('tableCreatedMap kaydedilemedi:', error)
+    }
+  }, [tableCreatedMap])
+
   // pendingOrders değiştiğinde localStorage'a kaydet
   useEffect(() => {
     try {
@@ -487,7 +535,7 @@ function App() {
 
     setNotifications(prev => [notification, ...prev])
 
-    // Masayı dolu olarak işaretle
+    // Masayı dolu olarak işaretle (ödeme alınana kadar)
     setOccupiedTables(prev => ({
       ...prev,
       [tableId]: true
@@ -564,6 +612,12 @@ function App() {
       delete updated[tableId]
       return updated
     })
+
+    // Masayı dolu olarak işaretle (ödeme alınana kadar)
+    setOccupiedTables(prev => ({
+      ...prev,
+      [tableId]: true
+    }))
 
     // Masalar sekmesi siparişleri göstersin diye ürünleri personele ait siparişlere aktar
     setOrders(prev => {
