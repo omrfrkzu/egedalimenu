@@ -461,40 +461,42 @@ const MenuView = ({
                 <p className="menu-item-price">{item.price.toFixed(2)} ₺</p>
               )}
             </div>
-            <button
-              className={`menu-item-add-btn ${addedItems.has(item.id) ? 'added' : ''}`}
-              onClick={(e) => {
-                e.stopPropagation()
-                if (isCustomerMode && !selectedTable) {
-                  alert('Lütfen önce bir masa seçin!')
-                  return
-                }
-                onAddItem(item)
-                // Tik işareti göster
-                setAddedItems(prev => new Set(prev).add(item.id))
-                // 2 saniye sonra tik işaretini kaldır
-                setTimeout(() => {
-                  setAddedItems(prev => {
-                    const newSet = new Set(prev)
-                    newSet.delete(item.id)
-                    return newSet
-                  })
-                }, 2000)
-              }}
-              disabled={isCustomerMode && !selectedTable}
-            >
-              {addedItems.has(item.id) ? (
-                <>
-                  <Check size={18} />
-                  Eklendi
-                </>
-              ) : (
-                <>
-                  <Plus size={18} />
-                  Ekle
-                </>
-              )}
-            </button>
+            {isCustomerMode && (
+              <button
+                className={`menu-item-add-btn ${addedItems.has(item.id) ? 'added' : ''}`}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  if (!selectedTable) {
+                    alert('Lütfen önce bir masa seçin!')
+                    return
+                  }
+                  onAddItem(item)
+                  // Tik işareti göster
+                  setAddedItems(prev => new Set(prev).add(item.id))
+                  // 2 saniye sonra tik işaretini kaldır
+                  setTimeout(() => {
+                    setAddedItems(prev => {
+                      const newSet = new Set(prev)
+                      newSet.delete(item.id)
+                      return newSet
+                    })
+                  }, 2000)
+                }}
+                disabled={!selectedTable}
+              >
+                {addedItems.has(item.id) ? (
+                  <>
+                    <Check size={18} />
+                    Eklendi
+                  </>
+                ) : (
+                  <>
+                    <Plus size={18} />
+                    Ekle
+                  </>
+                )}
+              </button>
+            )}
           </div>
           )
         })}
