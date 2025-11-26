@@ -308,6 +308,8 @@ const MenuView = ({
                 <button 
                   className="change-table-btn"
                   onClick={() => {
+                    // Masa seçimini temizle ve modalı aç
+                    onTableSelect && onTableSelect(null)
                     setShowTableSelector(true)
                   }}
                   title="Masa Değiştir"
@@ -357,6 +359,7 @@ const MenuView = ({
                                     alert('Bu masa şu anda dolu. Lütfen başka bir masa seçin.')
                                     return
                                   }
+                                  // Yeni masa seçildiğinde direkt seç
                                   onTableSelect && onTableSelect(table.id)
                                   setShowTableSelector(false)
                                 }}

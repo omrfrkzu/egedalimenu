@@ -369,6 +369,13 @@ function App() {
   }
 
   const handleTableSelect = (tableId, options = {}) => {
+    // Müşteri modunda masa seçimi temizleniyorsa
+    if (!currentUser && tableId === null) {
+      setSelectedTable(null)
+      setSelectedAccountId(null)
+      return
+    }
+
     // Müşteri modunda dolu masaları seçilemez yap
     if (!currentUser && occupiedTables[tableId]) {
       alert('Bu masa şu anda dolu. Lütfen başka bir masa seçin.')
@@ -376,6 +383,11 @@ function App() {
     }
 
     if (!currentUser) {
+      // Eğer başka bir masa seçiliyse, önce onu temizle
+      if (selectedTable && selectedTable !== tableId) {
+        setSelectedTable(null)
+        setSelectedAccountId(null)
+      }
       selectTableAccount(tableId, CUSTOMER_ACCOUNT_ID)
       return
     }
