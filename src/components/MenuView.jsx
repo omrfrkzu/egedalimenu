@@ -281,7 +281,7 @@ const MenuView = ({
                 <div className="trigger-content">
                   <div className="trigger-text">
                     <span className="trigger-label">Masa Seçin</span>
-                    <span className="trigger-hint">Sipariş vermek için masa seçin</span>
+                    <span className="trigger-hint">Masa numaranızı seçerek hızlıca sipariş verebilirsiniz.</span>
                   </div>
                 </div>
                 <span className="trigger-arrow">›</span>
