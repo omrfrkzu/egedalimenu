@@ -1603,6 +1603,23 @@
   transform: scale(0.98);
 }
 
+.menu-item-add-btn.added {
+  background: linear-gradient(120deg, #10b981, #059669);
+  animation: addedPulse 0.3s ease-out;
+}
+
+@keyframes addedPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .menu-create-table {
   position: sticky;
   bottom: 0;

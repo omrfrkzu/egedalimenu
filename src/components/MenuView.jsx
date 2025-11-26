@@ -32,6 +32,7 @@ const MenuView = ({
   const [selectedItem, setSelectedItem] = useState(null)
   const [orderNote, setOrderNote] = useState('')
   const [activeFloor, setActiveFloor] = useState(null)
+  const [addedItems, setAddedItems] = useState(new Set())
   
   // Masalar listesi
   const tables = [
@@ -461,7 +462,7 @@ const MenuView = ({
               )}
             </div>
             <button
-              className="menu-item-add-btn"
+              className={`menu-item-add-btn ${addedItems.has(item.id) ? 'added' : ''}`}
               onClick={(e) => {
                 e.stopPropagation()
                 if (isCustomerMode && !selectedTable) {
@@ -469,11 +470,30 @@ const MenuView = ({
                   return
                 }
                 onAddItem(item)
+                // Tik işareti göster
+                setAddedItems(prev => new Set(prev).add(item.id))
+                // 2 saniye sonra tik işaretini kaldır
+                setTimeout(() => {
+                  setAddedItems(prev => {
+                    const newSet = new Set(prev)
+                    newSet.delete(item.id)
+                    return newSet
+                  })
+                }, 2000)
               }}
               disabled={isCustomerMode && !selectedTable}
             >
-              <Plus size={18} />
-              Ekle
+              {addedItems.has(item.id) ? (
+                <>
+                  <Check size={18} />
+                  Eklendi
+                </>
+              ) : (
+                <>
+                  <Plus size={18} />
+                  Ekle
+                </>
+              )}
             </button>
           </div>
           )
