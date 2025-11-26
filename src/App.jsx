@@ -11,6 +11,7 @@ import OrderPanel from './components/OrderPanel'
 import OrdersView from './components/OrdersView'
 import AdminLogin from './pages/AdminLogin'
 import WaiterLogin from './pages/WaiterLogin'
+import ComingSoon from './components/ComingSoon'
 import './App.css'
 
 const DEFAULT_ACCOUNT_ID = 'default'
@@ -1156,6 +1157,7 @@ function App() {
           )
         }
       />
+      <Route path="/" element={<ComingSoon />} />
       <Route path="*" element={
         <div className="app">
           {mainLayout}
