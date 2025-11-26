@@ -133,8 +133,9 @@ const Header = ({
                 </div>
               )}
             </div>
-            <button className="icon-button" onClick={onLogout} title="Çıkış Yap">
-              <LogOut size={20} />
+            <button className="logout-button" onClick={onLogout} title="Çıkış Yap">
+              <LogOut size={18} />
+              <span>Çıkış</span>
             </button>
           </>
         ) : null}
