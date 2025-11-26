@@ -461,12 +461,12 @@ const MenuView = ({
                 <p className="menu-item-price">{item.price.toFixed(2)} ₺</p>
               )}
             </div>
-            {isCustomerMode && (
+            {(isCustomerMode || selectedTable) && (
               <button
                 className={`menu-item-add-btn ${addedItems.has(item.id) ? 'added' : ''}`}
                 onClick={(e) => {
                   e.stopPropagation()
-                  if (!selectedTable) {
+                  if (isCustomerMode && !selectedTable) {
                     alert('Lütfen önce bir masa seçin!')
                     return
                   }
@@ -482,7 +482,7 @@ const MenuView = ({
                     })
                   }, 2000)
                 }}
-                disabled={!selectedTable}
+                disabled={isCustomerMode && !selectedTable}
               >
                 {addedItems.has(item.id) ? (
                   <>
