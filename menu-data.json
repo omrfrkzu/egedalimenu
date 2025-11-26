@@ -1,0 +1,587 @@
+[
+  {
+    "name": "��� Serpme KahvaltÄ±���",
+    "slug": "----serpme-kahvalti-iki---",
+    "price": "1600.00â‚º",
+    "description": "Beyaz Peynir, KaÅŸar ve Tulum Peyniri, Salam, Dana FÃ¼me, Kekikli Sucuk, Siyah ve YeÅŸil Zeytin, Sahanda Yumurta veya Menemen, Simit, Tam BuÄŸday EkmeÄŸi, Bal, Kaymak ve ReÃ§el Ã‡eÅŸitleri, Domates, SalatalÄ±k, YeÅŸillikler, PaÃ§anga ve IspanaklÄ± Sigara BÃ¶reÄŸi, SÄ±nÄ±rsÄ±z Ã‡ay\\",
+    "image": "https://framerusercontent.com/images/PwpTLXTUosPHHTk0c4KufIg3Y.webp?width=1024&height=1024",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� Sucuklu Ä°talyan Omlet���",
+    "slug": "----sucuklu-italyan---",
+    "price": "475.00â‚º",
+    "description": "3 Yumurta, Sucuk, Taze KaÅŸar, Mevsim YeÅŸillikleri, Meyve EÅŸliÄŸinde\\",
+    "image": "https://framerusercontent.com/images/yfToShzmEsSyNKmUv44keS03XU.png?width=653&height=656",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� Ajvar & Et FÃ¼me Sandwich���",
+    "slug": "----ajvar-et-fume-sandwich---",
+    "price": "475.00â‚º",
+    "description": "Ajvar Sos, Taze SÃ¼t KaÅŸarÄ±, BoÅŸnak Kuru Et, Pembe Domates, Roka\\",
+    "image": "https://framerusercontent.com/images/lkhQufwZM2uRWm7j1pI4G9a01g.png?width=359&height=359",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� Gurme Bratwurst TabaÄŸÄ±���",
+    "slug": "----gurme-bratwurst---",
+    "price": "550.00â‚º",
+    "description": "Bir Adet Izgara Bratwurts Sosis, 2 GÃ¶z Yumurta, TurÅŸu, KetÃ§ap, Mayonez Ve Mevsim Meyveleri Ä°le\\",
+    "image": "https://framerusercontent.com/images/6KzTKCkGHFt7bSl5s7mI3YCPpM.png?width=627&height=631",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� Bergama SofrasÄ±���",
+    "slug": "----bergama-sofra---",
+    "price": "365.00â‚º",
+    "description": "Bergama Tulumu, PastÄ±rma, Domates, FesleÄŸen, Hardal\\",
+    "image": "https://framerusercontent.com/images/lkhQufwZM2uRWm7j1pI4G9a01g.png?width=359&height=359",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� BEÅžÄ°KTAÅž kAHVALTISI���",
+    "slug": "----beÅŸi-ktaÅŸ-kahvaltisi---",
+    "price": "750.00â‚º",
+    "description": "GÃ¼nlÃ¼k Sokak Simidi, GÃ¶z Yumurta, BoÅŸnak Kuru Et, Tokat Bez Sucuk, Trakya Eski KaÅŸar, Ã‡anakkale Ezine Peyniri, Kalamata Zeytin, SÃ¼t ReÃ§eli, Manda KaymaÄŸÄ± - Bal, Mini SÃ¶ÄŸÃ¼ÅŸ\\",
+    "image": "https://framerusercontent.com/images/60bRxKIowsAyBZA9X5caHwhcR8.png?width=592&height=394",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� BURRATA���",
+    "slug": "----burrata---",
+    "price": "650.00â‚º",
+    "description": "Pembe KÃ¶y Domatesi, Ã‡am FÄ±stÄ±ÄŸÄ±, Dilim Zeytin, Manda Burrata, Toz Parmesan, Balzemik KremasÄ±\\",
+    "image": "https://framerusercontent.com/images/PUhEAOwRX0U14ZId80UQCd4j4ro.jpg?width=439&height=292",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� ABAZA SANDWÄ°CH���",
+    "slug": "----abaza-sandwi-ch---",
+    "price": "325.00â‚º",
+    "description": "Ä°talyan Ciabatta EkmeÄŸine, Ä°talyan Mezesi, Dana Jambon, Abaza Peyniri, ZeytinyaÄŸlÄ± Nar EkÅŸili Kuru Domates SalatasÄ±, Roka, Ranch Sos\\",
+    "image": "https://framerusercontent.com/images/Q5jHJmijctITNLqynv91ChpjE.jpg?width=2832&height=4240",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� KAHVALTI TABAÄžI EGE���",
+    "slug": "----kahvalti-tabaÄŸi-ege---",
+    "price": "580.00â‚º",
+    "description": "YÃ¶resel tel peyniri, â€˜Karsâ€™ eski kaÅŸarÄ±, â€˜Ezineâ€™ beyaz peynir, GELÄ°NCÄ°K reÃ§eli, bal, kaymak, tereyaÄŸÄ±, yeÅŸil zeytin, siyah zeytin, haÅŸlanmÄ±ÅŸ yumurta, Ä±spanaklÄ± sigara bÃ¶reÄŸi, Ã§engelkÃ¶y salatalÄ±k, domates, biber, roka, ceviz, kuru kayÄ±sÄ±\\",
+    "image": "https://framerusercontent.com/images/R7DaX34jGcHx9YY7a1i8PaMXP4.png?width=600&height=400",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� PASTIRMA HUMUS���",
+    "slug": "----pastirma-humus---",
+    "price": "550.00â‚º",
+    "description": "ekÅŸi mayalÄ± ekmek Ã¼zerine humus, pastÄ±rma ve kavrulmuÅŸ nohut\\",
+    "image": "https://framerusercontent.com/images/vPwK0Lay4o7ebPCYyIVK9xy3c0.jpg?width=1179&height=1175",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� AKDENÄ°Z OMLET���",
+    "slug": "----akdeni-z-omlet---",
+    "price": "475.00â‚º",
+    "description": "sade omlet, akdeniz yeÅŸillikleri, domates, salatalÄ±k, tulum peyniri, zeytin salatasÄ±\\",
+    "image": "https://framerusercontent.com/images/E6rawn3xA4jKSf0pBLviH8zxwg.png?width=1600&height=1600",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� EGE SERPMESÄ°���",
+    "slug": "----ege-serpmesi---",
+    "price": "380.00â‚º",
+    "description": "Ã‡ERÄ° DOMATES, ROKA\\",
+    "image": "https://framerusercontent.com/images/PLPrFuiXDBOKASr9eBwaI6rA5uk.jpg?width=612&height=408",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� PESTO - FÃœME���",
+    "slug": "----pesto-fÃ¼me---",
+    "price": "390.00â‚º",
+    "description": "YUMUÅžAK BEYAZ PEYNÄ°R, YEÅžÄ°L PESTO SOS, ANTRÄ°KOT FÃœME \\",
+    "image": "https://framerusercontent.com/images/RQ7xeM0MRkqJO1Wu2HNxB1BscZs.jpg?width=1300&height=575",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9"
+  },
+  {
+    "name": "��� IZGARA HELLÄ°M SALATASI���",
+    "slug": "----izgara-helli-m-salatasi---",
+    "price": "390.00â‚º",
+    "description": "KIBRIS AZ TUZLU KIZARMIÅž HELLÄ°M VE MEVSÄ°M SALATASI Ä°LE SERVÄ°S EDÄ°LÄ°R\\",
+    "image": "https://framerusercontent.com/images/O4lDnbBxMyrSkc45KAyBEZpMU.png?width=1080&height=1080",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Ä°TALYAN PASTIRMALI OMLET���",
+    "slug": "----i-talyan-pastirmali-omlet---",
+    "price": "380.00â‚º",
+    "description": "YAYIK TEREYAÄžINDA OMLET, ÃœSTÃœNDE Ã‡ITIR PASATIRMA VE YANINDA YEÅžÄ°LLÄ°K Ä°LE SERVÄ°S EDÄ°LÄ°R.\\",
+    "image": "https://framerusercontent.com/images/T9nYKYoNyBYbbBziaPiNpYxVI.png?width=1080&height=1080",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� BAGETTE SANDWÄ°CH���",
+    "slug": "----bagette-sandwi-ch---",
+    "price": "275.00â‚º",
+    "description": "Ã‡ITIR BAGET EKMEÄžÄ°NE YEÅžÄ°L PESTO SOS, ÅžÄ°RDEN MAYALI BEYAZ PEYNÄ°R, Ä°SPANYOL GENÄ°Åž SALAM, PEMBE DOMATES, ROKA\\",
+    "image": "https://framerusercontent.com/images/GAvoeHd7nnMbQXAcDgT2oBlBqI.png?width=1080&height=1080",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� 5 Ã‡EÅžÄ°T MEZE MENÃœ���",
+    "slug": "----5-Ã§eÅŸit-meze-menÃ¼---",
+    "price": "425.00â‚º",
+    "description": "4 Ã‡EÅžÄ°T YOÄžURTLU MEZE\\ 1 ADET Ä°Ã‡LÄ° KÃ–FTE\\",
+    "image": "https://framerusercontent.com/images/lxTVSvbcWh102tIbFyl1u8lcak.jpg?width=4240&height=2832",
+    "category": "Mezeler",
+    "categoryCode": "pzSCkdZXL"
+  },
+  {
+    "name": "��� KÃ¶poÄŸlu 250Gr.���",
+    "slug": "----kÃ¶poÄŸlu-250gr---",
+    "price": "225.00â‚º",
+    "description": "Dana Pastırma, Füme Kaburga, Abaza Peyniri, Barbekü Sos, Kabak Mezesi\\",
+    "image": "https://framerusercontent.com/images/suM9MiMf71QKJxwXYo7PYzCSGsA.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� GÃ¼ne Merhaba���",
+    "slug": "----gunemerhaba---",
+    "price": "390.00â‚º",
+    "description": "Ä°spanyol Salam, Taze SÃ¼t KaÅŸarÄ±, Zeytin, TereyaÄŸÄ±, Bal, ReÃ§el, HaÅŸlanmÄ±ÅŸ yumurta, ZeytinyaÄŸÄ±, Domates, SalatalÄ±k, Roka\\",
+    "image": "https://framerusercontent.com/images/S5TUV0JqKe82brzmohWZbv1s3Wk.png?width=633&height=629",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Macchiato���",
+    "slug": "----macchiato---",
+    "price": "115.00â‚º",
+    "description": "3 Yumurta, Sucuk, Taze KaÅŸar, Mevsim YeÅŸillikleri, Meyve EÅŸliÄŸinde\\",
+    "image": "https://framerusercontent.com/images/yfToShzmEsSyNKmUv44keS03XU.png?width=653&height=656",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "���!Ekmek Ãœzeri PastÄ±rmalÄ± Yumurta���",
+    "slug": "----ekmek-Ã¼zeri-pastÄ±rmalÄ±-yumurta---",
+    "price": "475.00â‚º",
+    "description": "Ekmek Ãœzeri Humus, Ã‡Ä±rpÄ±lmÄ±ÅŸ Yumurta Ve Ã‡Ä±tÄ±r PastÄ±rma Mevsim YeÅŸillikleri\\",
+    "image": "https://framerusercontent.com/images/D2eLtE2xee2P83O0byxO7hJGp0k.png?width=711&height=636",
+    "category": "SÄ±cak Lezzetler",
+    "categoryCode": "o9D7pjkuV"
+  },
+  {
+    "name": "���+Ekmek Ãœzeri Ã‡emensiz PastÄ±rmalÄ± Yumurta���",
+    "slug": "----ekmek-Ã¼zeri-Ã§emensiz-pastÄ±rmalÄ±-yumurta---",
+    "price": "475.00â‚º",
+    "description": "Ekmek Ãœzerine Humus, Ä°ki Adet Ã‡Ä±rpÄ±lmÄ±ÅŸ Yumurta TereyaÄŸÄ±nda Ã‡Ä±tÄ±rdatÄ±lmÄ±ÅŸ Ã‡emensiz PastÄ±rma ve Mevsim YeÅŸillikleri\\",
+    "image": "https://framerusercontent.com/images/feDELvBv3OZ27zwzKO7kWohLnk.png?width=734&height=623",
+    "category": "SÄ±cak Lezzetler",
+    "categoryCode": "o9D7pjkuV"
+  },
+  {
+    "name": "��� KÄ±ymalÄ± FÄ±rÄ±nlanmÄ±ÅŸ MantÄ±���",
+    "slug": "----kÄ±ymalÄ±-fÄ±rÄ±nlanmÄ±ÅŸ-mantÄ±---",
+    "price": "425.00â‚º",
+    "description": "KÄ±zarmÄ±ÅŸ Hellim Peyniri, Mevsim YeÅŸillikleri, Ã‡eri Domates\\",
+    "image": "https://framerusercontent.com/images/fH70GybjYMcAlPG0Sm0Y1QMveGQ.png?width=636&height=638",
+    "category": "SÄ±cak Lezzetler",
+    "categoryCode": "o9D7pjkuV"
+  },
+  {
+    "name": "��� Sucuklu Special���",
+    "slug": "----sucuklu-special---",
+    "price": "475.00â‚º",
+    "description": "Ciabatta EkmeÄŸi, Humus, TereyaÄŸÄ±nda GÃ¶z Yumurta, KÄ±zarmÄ±ÅŸ Sucuk, Mevsim Meyve\\",
+    "image": "https://framerusercontent.com/images/EEyV64CcSnb99hMthjvqKk.jpg?width=768&height=512",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� Sucuklu Yumurta���",
+    "slug": "----sucuklu-yumurta---",
+    "price": "280.00â‚º",
+    "description": "KÃ¶y YumurtasÄ±, Kasap SucuÄŸu, YayÄ±k TereyaÄŸÄ±, Kaya Tuzu\\",
+    "image": "https://framerusercontent.com/images/b3sFPBSO4VkGjIGrEiI0V33anOA.jpeg?width=800&height=600",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� KavurmalÄ± Yumurta���",
+    "slug": "----kavurmalÄ±-yumurta---",
+    "price": "280.00â‚º",
+    "description": "KÃ¶y YumurtasÄ±, Dana Kavurma, YayÄ±k TereyaÄŸÄ±, Kaya Tuzu\\",
+    "image": "https://framerusercontent.com/images/ePnbv7uWVTrYvzXI8Rz00Xckc.jpg?width=730&height=535",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� PastÄ±rmalÄ± Yumurta���",
+    "slug": "----pastÄ±rmalÄ±-yumurta---",
+    "price": "280.00â‚º",
+    "description": "KÃ¶y YumurtasÄ±, Antrikot PastÄ±rma, YayÄ±k TereyaÄŸÄ±, Kaya Tuzu\\",
+    "image": "https://framerusercontent.com/images/7PZ57atj5b3gRt9JF7oapabWDA.jpg?width=512&height=384",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� Beyaz Peynirli Menemen���",
+    "slug": "----beyaz-peynirli-menemen---",
+    "price": "250.00â‚º",
+    "description": "Beyaz Peynir, Domates, YeÅŸil Biber, KÃ¶y YumurtasÄ±, Kaya Tuzu\\",
+    "image": "https://framerusercontent.com/images/cotrC8RKE9n6rpzOeBhFYtHKAE.jpg?width=730&height=535",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� KaÅŸarlÄ± Menemen���",
+    "slug": "----kaÅŸarlÄ±-menemen---",
+    "price": "250.00â‚º",
+    "description": "Taze KaÅŸar Peyniri, Domates, YeÅŸil Biber, KÃ¶y YumurtasÄ±, Kaya Tuzu\\",
+    "image": "https://framerusercontent.com/images/ak0yROQtCNribicu2SC3GW6esM4.jpg?width=1024&height=576",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� Sade Menemen���",
+    "slug": "----sade-menemen---",
+    "price": "220.00â‚º",
+    "description": "Taze Domates, YeÅŸil Biber, KÃ¶y YumurtasÄ±, Kaya Tuzu\\",
+    "image": "https://framerusercontent.com/images/ak0yROQtCNribicu2SC3GW6esM4.jpg?width=1024&height=576",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� KaÅŸarlÄ± Omlet���",
+    "slug": "----kaÅŸarlÄ±-omlet---",
+    "price": "250.00â‚º",
+    "description": "Taze SÃ¼t KaÅŸarÄ± ve 2 Yumurta ile Servis Edilir\\",
+    "image": "https://framerusercontent.com/images/wVzvqsMyhDmUaXTuSYMKD4HI.jpg?width=768&height=512",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� Ä°talyan PastÄ±rmalÄ± Omlet���",
+    "slug": "----italyan-pastÄ±rmalÄ±-omlet---",
+    "price": "435.00â‚º",
+    "description": "Ã‡emensiz pastÄ±rma, humus,TereyaÄŸlÄ± 2 Yumurta ve yeÅŸillik ile Servis Edilir\\",
+    "image": "https://framerusercontent.com/images/D2eLtE2xee2P83O0byxO7hJGp0k.png?width=711&height=636",
+    "category": "Yumurta Ã‡eÅŸitleri",
+    "categoryCode": "twu2yZs_Y"
+  },
+  {
+    "name": "��� Peynir & FÃ¼me Keyfi���",
+    "slug": "----peynir-fÃ¼me-keyfi---",
+    "price": "650.00â‚º",
+    "description": "Eski KaÅŸar, Taze SÃ¼t KaÅŸarÄ±, Beyaz Peynir, Ä°sli Peynir, Ä°spanyol Salam, Kekikli Sucuk, Hindi FÃ¼me, PastÄ±rma\\",
+    "image": "https://framerusercontent.com/images/i0EH3PrlUtWr0p3eYoJlHSm4.jpg?width=1000&height=663",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Gurme Bratwurst TabaÄŸÄ±���",
+    "slug": "----gurme-bratwurst-tabaÄŸÄ±---",
+    "price": "550.00â‚º",
+    "description": "Izgara Bratwurts Sosis, Ä°ki GÃ¶z Yumurta, TurÅŸu, KetÃ§ap, Mayonez ve Mevsim Meyveleri Ä°le\\",
+    "image": "https://framerusercontent.com/images/6KzTKCkGHFt7bSl5s7mI3YCPpM.png?width=627&height=631",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Sabah SofrasÄ±���",
+    "slug": "----sabah-sofrasÄ±---",
+    "price": "490.00â‚º",
+    "description": "Dil Peyniri, Lor Peyniri, Beyaz Peynir, Dana Kavurma, TereyaÄŸÄ±, Bal, AcÄ± Biber ReÃ§eli, Acuka, Ajvar, Mix Zeytin, Domates, SalatalÄ±k\\",
+    "image": "https://framerusercontent.com/images/4vxhIVcygV6PaK2uQVBSppRQPHk.png?width=1080&height=1350",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� GÃ¼ne Merhaba���",
+    "slug": "----gÃ¼ne-merhaba---",
+    "price": "390.00â‚º",
+    "description": "Ä°spanyol Salam, Taze SÃ¼t KaÅŸarÄ±, Zeytin, TereyaÄŸÄ±, Bal, ReÃ§el, HaÅŸlanmÄ±ÅŸ yumurta, ZeytinyaÄŸÄ±, Domates, SalatalÄ±k, Roka\\",
+    "image": "https://framerusercontent.com/images/S5TUV0JqKe82brzmohWZbv1s3Wk.png?width=633&height=629",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Ege SabahÄ±���",
+    "slug": "----ege-sabahÄ±---",
+    "price": "375.00â‚º",
+    "description": "Lor, ZeytinyaÄŸ, ReÃ§el, Mix Zeytin, Acuka, Simit, Bal Kaymak, Beyaz Peynir, Domates, SalatalÄ±k\\",
+    "image": "https://framerusercontent.com/images/HPcZokaJJeaQVJp8U4FrLkEGMg.png?width=628&height=625",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Anadolu Esintisi���",
+    "slug": "----anadolu-esintisi---",
+    "price": "350.00â‚º",
+    "description": "Humus, Beyaz Peynir, YayÄ±k TereyaÄŸÄ±, Ã‡ilek ReÃ§eli, Domates, SalatalÄ±k, Mix Zeytin\\",
+    "image": "https://framerusercontent.com/images/NzyRIGJaZRKU99pgp657kbZH3Vs.png?width=620&height=628",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Gurme KahvaltÄ±���",
+    "slug": "----gurme-kahvalti---",
+    "price": "580.00â‚º",
+    "description": "Dil Peyniri, Taze SÃ¼t KaÅŸarÄ±, Beyaz Peynir, TereyaÄŸ, HaÅŸlanmÄ±ÅŸ Yumurta, PastÄ±rma, Balkan SalamÄ±, Hindi FÃ¼me, Dana Kavurma, Special Tulum Peyniri, AcÄ±biber ReÃ§eli, Mix Zeytin\\",
+    "image": "https://framerusercontent.com/images/4vxhIVcygV6PaK2uQVBSppRQPHk.png?width=1080&height=1350",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� YÃ¶resel KahvaltÄ±���",
+    "slug": "----yÃ¶resel-kahvaltÄ±---",
+    "price": "625.00â‚º",
+    "description": "Yaban Mersinli Tulum, Trakya Eski KaÅŸar, Dil Peyniri, Taze SÃ¼t KaÅŸarÄ±, HaÅŸlanmÄ±ÅŸ Yumurta, Balkan Salam, PastÄ±rma, Hindi FÃ¼me\\",
+    "image": "https://framerusercontent.com/images/4vxhIVcygV6PaK2uQVBSppRQPHk.png?width=1080&height=1350",
+    "category": "KahvaltÄ± TabaklarÄ±",
+    "categoryCode": "ZMKsaip4q"
+  },
+  {
+    "name": "��� Amerikan SalatalÄ± CiÄŸer���",
+    "slug": "----amerikan-salatalÄ±-ciÄŸer---",
+    "price": "380.00â‚º",
+    "description": "Arnavut CiÄŸeri, Amerikan SalatasÄ±, cibatta ekmeÄŸi\\",
+    "image": "https://framerusercontent.com/images/pltKCqDfUT319zVxLsO6qkTgk.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� TÃ¼tsÃ¼ TadÄ±nda���",
+    "slug": "----tÃ¼tsÃ¼-tadÄ±nda---",
+    "price": "485.00â‚º",
+    "description": "Dana Pastırma, Füme Kaburga, Abaza Peyniri, Barbekü Sos, Kabak Mezesi\\",
+    "image": "https://framerusercontent.com/images/suM9MiMf71QKJxwXYo7PYzCSGsA.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Mortadella SandviÃ§���",
+    "slug": "----mortadella-sandviÃ§---",
+    "price": "390.00â‚º",
+    "description": "Mortadella SalamÄ±, Ä°spanyol Mezesi, Trakya Eski KaÅŸar, TurÅŸu, ZeytinyaÄŸlÄ± Kuru Domates\\",
+    "image": "https://framerusercontent.com/images/KfEtrdcNLm0j3eCtLL3dOkQWk.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Ege Meltemi���",
+    "slug": "----ege-meltemi---",
+    "price": "265.00â‚º",
+    "description": "Ezine Peyniri, Zeytin Ezmesi, Kekik, ZeytinyaÄŸlÄ± Kuru Domates\\",
+    "image": "https://framerusercontent.com/images/rVHqGR7X1BfRa95KKvQ1oOS9pA.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� TatlÄ± SandviÃ§���",
+    "slug": "----tatlÄ±-sandviÃ§---",
+    "price": "325.00â‚º",
+    "description": "Manda KaymaÄŸÄ±, Ã‡ikolata, ReÃ§el veya Bal\\",
+    "image": "https://framerusercontent.com/images/bMK7oSpBSoNE2SAYFx7nbo2120.png?width=1000&height=1000",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Bergama SofrasÄ±���",
+    "slug": "----bergama-sofrasÄ±---",
+    "price": "410.00â‚º",
+    "description": "Bergama Tulumu, Pastırma, Domates, girit ezmesi,ispanyol mezesi,roka\\",
+    "image": "https://framerusercontent.com/images/lkhQufwZM2uRWm7j1pI4G9a01g.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Balkan SandviÃ§���",
+    "slug": "----balkan-sandviÃ§---",
+    "price": "425.00â‚º",
+    "description": "Taze SÃ¼t KaÅŸarÄ±, Balkan Salam, BoÅŸnak Kuru Et, Amerikan SalatasÄ±, Ã‡eri Domates, Roka\\",
+    "image": "https://framerusercontent.com/images/jNGTTFTS4WDaI8OWR807vjpot2I.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Et FÃ¼me & Pesto SandviÃ§���",
+    "slug": "----et-fÃ¼me-pesto-sandviÃ§---",
+    "price": "425.00â‚º",
+    "description": "Ä°nce Dilim FÃ¼me Et, YumuÅŸak Beyaz Peynir, YeÅŸil Pesto Sos, Roka\\",
+    "image": "https://framerusercontent.com/images/rVHqGR7X1BfRa95KKvQ1oOS9pA.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Kekikli SandviÃ§���",
+    "slug": "----kekikli-sandviÃ§---",
+    "price": "425.00â‚º",
+    "description": "Kekikli Sucuk, Abaza Peyniri, Amerikan SalatasÄ±, Ã‡eri Domates, Roka\\",
+    "image": "https://framerusercontent.com/images/fKmHfojMYUL4eyawgsUq4W2FzIs.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� EgedalÄ± SandviÃ§���",
+    "slug": "----egedalÄ±-sandviÃ§---",
+    "price": "380.00â‚º",
+    "description": "Eski KaÅŸar, Antrikot Dana FÃ¼me, Ä°spanyol Mezesi, ZeytinyaÄŸlÄ± Kuru Domates Ve Roka\\",
+    "image": "https://framerusercontent.com/images/5UB1KCIrOa2yRsuiM0Qib6h8.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Klasik SandviÃ§���",
+    "slug": "----klasik-sandviÃ§---",
+    "price": "275.00â‚º",
+    "description": "Ä°nek Peyniri, Ä°spanyol Salam, Domates, SalatalÄ±k ve YeÅŸillik\\",
+    "image": "https://framerusercontent.com/images/XT56YAQiORiLsu4Slk6rfKSfBg.png?width=1024&height=1024",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Mozarella SandviÃ§���",
+    "slug": "----mozarella-sandviÃ§---",
+    "price": "450.00â‚º",
+    "description": "BoÅŸnak Kuru Et, Buffa Manda Mozarella, Roka Ã‡eri Domates, Pesto Sos\\",
+    "image": "https://framerusercontent.com/images/jNGTTFTS4WDaI8OWR807vjpot2I.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Mezeli Gurme SandviÃ§���",
+    "slug": "----mezeli-gurme-sandviÃ§---",
+    "price": "335.00â‚º",
+    "description": "OrtasÄ±nda PatlÄ±can SalatasÄ±, YanÄ±nda KÃ¶zlenmiÅŸ Biber, Biraz Haydari, Beyaz Peynir KÃ¼pleri, Ãœzerine KavrulmuÅŸ Ceviz ParÃ§alarÄ±\\",
+    "image": "https://framerusercontent.com/images/tXXfx7UMqp7m6kdD9ojLqmBn0UI.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Kafkas SandviÃ§���",
+    "slug": "----kafkas-sandviÃ§---",
+    "price": "390.00â‚º",
+    "description": "Ä°sli Ã‡erkez Peyniri, BoÅŸnak Kuru Et, Abaza Peyniri, Acuka, Ã‡eri Domates,roka\\",
+    "image": "https://framerusercontent.com/images/jNGTTFTS4WDaI8OWR807vjpot2I.png?width=359&height=359",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Ä°talyan SandviÃ§���",
+    "slug": "----italyan-sandvic---",
+    "price": "465.00â‚º",
+    "description": "Ä°talyan Salam, Sepet Peyniri, Ä°talyan Mezesi, Kavurma, ZeytinyaÄŸlÄ± Kuru Domates, Roka\\",
+    "image": "https://framerusercontent.com/images/Le4XOSEPfMlwM7V039Mzxjmst4.jpg?width=768&height=512",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� LakerdalÄ± Beyaz Peynir SandviÃ§���",
+    "slug": "----lakerda-beyaz-peynir-sandwich---",
+    "price": "475.00â‚º",
+    "description": "Lakerda Dilimleri, YumuÅŸak Beyaz Peynir, ZeytinyaÄŸÄ±, Limon Sos\\",
+    "image": "https://framerusercontent.com/images/gvCHxFI3Vl3NJNsW1fG79XpyPE.png?width=1536&height=1024",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "��� Karides & Pesto Sandwich���",
+    "slug": "----karides-pesto-sandwich---",
+    "price": "475.00â‚º",
+    "description": "Karides, Roka, YeÅŸil Pesto Sos, Ä°nce DilimlenmiÅŸ Domates, Tulum Peyniri Rendesi, Ãœzerine BirkaÃ§ Damla Nar EkÅŸisi\\",
+    "image": "https://framerusercontent.com/images/SqXr3yztYRjAyprgDyJQGGAnjjQ.png?width=1536&height=1024",
+    "category": "SandviÃ§ler",
+    "categoryCode": "s9vSwHOZc"
+  },
+  {
+    "name": "Çay",
+    "slug": "cay",
+    "price": "35.00₺",
+    "description": "Demlikten taze demlenmiş siyah çay.",
+    "image": "https://framerusercontent.com/images/jd8E6rFprbYySvkAFod0UY2B84.jpeg?width=275&height=184",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  },
+  {
+    "name": "Fincan Çay",
+    "slug": "fincan-cay",
+    "price": "45.00₺",
+    "description": "Cam bardakta servis edilen tek kişilik çay.",
+    "image": "https://framerusercontent.com/images/N2tdFAnqBbw0nbt6Meaj8dj8uXM.jpg?width=728&height=486",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  },
+  {
+    "name": "Türk Kahvesi",
+    "slug": "turk-kahvesi",
+    "price": "80.00₺",
+    "description": "Klasik köz tadında Türk kahvesi.",
+    "image": "https://framerusercontent.com/images/R4Jk4KrQ5mk1PnGwgaISWecp6o.jpg?width=400&height=300",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  },
+  {
+    "name": "Americano",
+    "slug": "americano",
+    "price": "110.00₺",
+    "description": "Espresso üzerine eklenen sıcak su ile hazırlanır.",
+    "image": "https://framerusercontent.com/images/JF03deceDbhQiL2Qg8IFTDWVLJo.jpeg?width=201&height=251",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  },
+  {
+    "name": "Espresso",
+    "slug": "espresso",
+    "price": "110.00₺",
+    "description": "Yoğun aromalı tek shot espresso.",
+    "image": "https://framerusercontent.com/images/q4tk4HluAnQh5yaDv0SVkBu2xSE.webp?width=500&height=500",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  },
+  {
+    "name": "Cafe Latte",
+    "slug": "cafe-latte",
+    "price": "115.00₺",
+    "description": "Espresso ve buharda köpürtülmüş süt.",
+    "image": "https://framerusercontent.com/images/JZKfp7aksYPgtOk8Azd6SAe6Hs.jpg?width=1182&height=788",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  },
+  {
+    "name": "Cappucino",
+    "slug": "cappucino",
+    "price": "115.00₺",
+    "description": "Espresso, süt köpüğü ve kakao dokunuşu.",
+    "image": "https://framerusercontent.com/images/fvvJTZbPCQOtOOaqKw0YCdonmdw.webp?width=860&height=573",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  },
+  {
+    "name": "Macchiato",
+    "slug": "macchiato",
+    "price": "115.00₺",
+    "description": "Espresso üzerine hafif süt köpüğü eklenerek servis edilir.",
+    "image": "https://framerusercontent.com/images/hiWDSZpVUFTYVxZzguRAvogRy8o.webp?width=600&height=400",
+    "category": "İçecekler",
+    "categoryCode": "JSvfz4KNU"
+  }
+]
