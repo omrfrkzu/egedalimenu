@@ -56,7 +56,7 @@ const ComingSoon = () => {
           </div>
         </div>
         <div className="coming-soon-footer">
-          <p>© 2024 Restoran POS Sistemi. Tüm hakları saklıdır.</p>
+          <p>© 2024 Egedalı Gurme. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </div>
