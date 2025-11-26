@@ -181,6 +181,27 @@ const Header = ({
                   <div className="cart-items-list">
                     {customerCartItems.map((item) => (
                       <div key={item.id} className="cart-item">
+                        <div className="cart-item-image">
+                          {item.image && item.image.trim() !== '' ? (
+                            <>
+                              <img 
+                                src={item.image} 
+                                alt={item.name}
+                                onError={(e) => {
+                                  if (e.target && e.target.nextSibling) {
+                                    e.target.style.display = 'none'
+                                    e.target.nextSibling.style.display = 'flex'
+                                  }
+                                }}
+                              />
+                              <div className="cart-item-image-fallback" style={{ display: 'none' }}>
+                                🍽️
+                              </div>
+                            </>
+                          ) : (
+                            <div className="cart-item-image-fallback">🍽️</div>
+                          )}
+                        </div>
                         <div className="cart-item-info">
                           <h4 className="cart-item-name">{item.name}</h4>
                           <p className="cart-item-price">{(item.price * item.quantity).toFixed(2)} ₺</p>
