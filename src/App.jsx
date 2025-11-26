@@ -371,9 +371,9 @@ function App() {
     localStorage.removeItem('currentUser')
     setSelectedTable(null)
     setSelectedAccountId(null)
-    setOrders({})
+    // Not: orders, occupiedTables, tableCreatedMap localStorage'da kalır
+    // Ödeme alınana kadar masalar ve siparişler korunur
     setShowMenuOnly(false)
-    setTableCreatedMap({})
     setAccountModalState({ isOpen: false, tableId: null })
     setIsStaffMenuFocused(false)
     // Not: pendingOrders ve preparedOrders localStorage'da kalır, çıkış yapılsa bile siparişler görünmeye devam eder
