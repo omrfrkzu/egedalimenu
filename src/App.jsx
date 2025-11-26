@@ -53,6 +53,7 @@ function App() {
     }
   })
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const [orderNote, setOrderNote] = useState('')
   // localStorage'dan siparişleri yükle
   const [pendingOrders, setPendingOrders] = useState(() => {
     try {
@@ -833,6 +834,8 @@ function App() {
           occupiedTables={occupiedTables}
           onUpdateQuantity={handleUpdateQuantity}
           isAdmin={false}
+          orderNote={orderNote}
+          setOrderNote={setOrderNote}
         />
       )
     }
@@ -935,6 +938,14 @@ function App() {
         }}
         onToggleSidebar={() => setIsSidebarOpen(!isSidebarOpen)}
         isSidebarOpen={isSidebarOpen}
+        // Müşteri sepeti için props
+        isCustomerMode={!currentUser}
+        customerCartItems={!currentUser && selectedTable ? (customerOrdersForDisplay[selectedTable] || []) : []}
+        selectedTable={selectedTable}
+        onUpdateQuantity={handleUpdateQuantity}
+        onCompleteOrder={handleCustomerCompleteOrder}
+        orderNote={orderNote}
+        setOrderNote={setOrderNote}
       />
       <div className="app-body">
         {currentUser && (

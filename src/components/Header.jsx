@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react'
-import { Bell, LogOut, User, Menu } from 'lucide-react'
+import React, { useRef, useEffect, useState } from 'react'
+import { Bell, LogOut, User, Menu, ShoppingCart, Plus, Minus, X, Check } from 'lucide-react'
 import './Header.css'
 
 const Header = ({ 
@@ -11,26 +11,41 @@ const Header = ({
   onToggleNotifications,
   onMarkNotificationRead,
   onToggleSidebar,
-  isSidebarOpen
+  isSidebarOpen,
+  // Müşteri sepeti için props
+  isCustomerMode = false,
+  customerCartItems = [],
+  selectedTable,
+  onUpdateQuantity,
+  onCompleteOrder,
+  orderNote = '',
+  setOrderNote
 }) => {
   const notificationRef = useRef(null)
+  const cartRef = useRef(null)
+  const [showCart, setShowCart] = useState(false)
   const unreadCount = notifications.filter(n => !n.read).length
+  const cartItemCount = customerCartItems.reduce((sum, item) => sum + item.quantity, 0)
+  const cartTotal = customerCartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
 
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (notificationRef.current && !notificationRef.current.contains(event.target)) {
         onToggleNotifications && onToggleNotifications(false)
       }
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setShowCart(false)
+      }
     }
 
-    if (showNotifications) {
+    if (showNotifications || showCart) {
       document.addEventListener('mousedown', handleClickOutside)
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
-  }, [showNotifications, onToggleNotifications])
+  }, [showNotifications, showCart, onToggleNotifications])
   return (
     <header className="header">
       <div className="header-left">
@@ -138,7 +153,92 @@ const Header = ({
               <span>Çıkış</span>
             </button>
           </>
-        ) : null}
+        ) : (
+          // Müşteri modu - sepet ikonu
+          isCustomerMode && selectedTable && (
+            <div className="cart-wrapper" ref={cartRef}>
+              <button 
+                className={`icon-button cart-button ${cartItemCount > 0 ? 'has-items' : ''}`}
+                onClick={() => setShowCart(!showCart)}
+                title="Sepet"
+              >
+                <ShoppingCart size={20} />
+                {cartItemCount > 0 && (
+                  <span className="cart-badge">{cartItemCount}</span>
+                )}
+              </button>
+              {showCart && cartItemCount > 0 && (
+                <div className="cart-dropdown">
+                  <div className="cart-header">
+                    <h3>Sepetim</h3>
+                    <button 
+                      className="cart-close-btn"
+                      onClick={() => setShowCart(false)}
+                    >
+                      <X size={18} />
+                    </button>
+                  </div>
+                  <div className="cart-items-list">
+                    {customerCartItems.map((item) => (
+                      <div key={item.id} className="cart-item">
+                        <div className="cart-item-info">
+                          <h4 className="cart-item-name">{item.name}</h4>
+                          <p className="cart-item-price">{(item.price * item.quantity).toFixed(2)} ₺</p>
+                        </div>
+                        <div className="cart-item-controls">
+                          <button
+                            className="cart-quantity-btn"
+                            onClick={() => onUpdateQuantity && onUpdateQuantity(selectedTable, item.id, -1)}
+                          >
+                            <Minus size={16} />
+                          </button>
+                          <span className="cart-quantity">{item.quantity}</span>
+                          <button
+                            className="cart-quantity-btn"
+                            onClick={() => onUpdateQuantity && onUpdateQuantity(selectedTable, item.id, 1)}
+                          >
+                            <Plus size={16} />
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="cart-summary">
+                    <div className="cart-summary-item">
+                      <span>Toplam:</span>
+                      <strong>{cartTotal.toFixed(2)} ₺</strong>
+                    </div>
+                  </div>
+                  {setOrderNote && (
+                    <div className="cart-note">
+                      <label htmlFor="cart-note-input">Not (Opsiyonel)</label>
+                      <textarea
+                        id="cart-note-input"
+                        className="cart-note-input"
+                        placeholder="Siparişinizle ilgili özel bir not ekleyebilirsiniz..."
+                        value={orderNote}
+                        onChange={(e) => setOrderNote(e.target.value)}
+                        rows={2}
+                      />
+                    </div>
+                  )}
+                  <button
+                    className="cart-complete-btn"
+                    onClick={() => {
+                      if (onCompleteOrder && selectedTable) {
+                        onCompleteOrder(selectedTable, orderNote)
+                        setShowCart(false)
+                      }
+                    }}
+                  >
+                    <Check size={18} />
+                    <span>Siparişi Tamamla</span>
+                  </button>
+                </div>
+              )}
+            </div>
+          )
+        )}
       </div>
     </header>
   )

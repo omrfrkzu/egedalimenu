@@ -31,6 +31,7 @@ const MenuView = ({
   const [loading, setLoading] = useState(true)
   const [selectedItem, setSelectedItem] = useState(null)
   const [orderNote, setOrderNote] = useState('')
+  const [activeFloor, setActiveFloor] = useState(null)
   
   // Masalar listesi
   const tables = [
@@ -242,6 +243,13 @@ const MenuView = ({
     }, {})
   }, [])
 
+  // İlk katı varsayılan olarak ayarla
+  useEffect(() => {
+    if (showTableSelector && !activeFloor && Object.keys(tablesByFloor).length > 0) {
+      setActiveFloor(Object.keys(tablesByFloor)[0])
+    }
+  }, [showTableSelector, activeFloor, tablesByFloor])
+
   const handleItemClick = (item) => {
     if (!item.description) return
     setSelectedItem(item)
@@ -322,11 +330,22 @@ const MenuView = ({
                     </button>
                   </div>
                   <div className="table-selector-body">
-                    {Object.entries(tablesByFloor).map(([floor, floorTables]) => (
-                      <div key={floor} className="table-floor-section">
-                        <h4 className="floor-title">{floor}</h4>
+                    <div className="table-floor-tabs">
+                      {Object.keys(tablesByFloor).map((floor) => (
+                        <button
+                          key={floor}
+                          type="button"
+                          className={`table-floor-tab ${activeFloor === floor ? 'active' : ''}`}
+                          onClick={() => setActiveFloor(floor)}
+                        >
+                          {floor}
+                        </button>
+                      ))}
+                    </div>
+                    {activeFloor && tablesByFloor[activeFloor] && (
+                      <div className="table-floor-section">
                         <div className="tables-grid-selector">
-                          {floorTables.map(table => {
+                          {tablesByFloor[activeFloor].map(table => {
                             const isOccupied = occupiedTables[table.id]
                             const isSelected = selectedTable === table.id
                             return (
@@ -360,7 +379,7 @@ const MenuView = ({
                           })}
                         </div>
                       </div>
-                    ))}
+                    )}
                   </div>
                 </div>
               </div>
@@ -563,7 +582,7 @@ const MenuView = ({
               <h3 className="sidebar-title">Siparişlerim</h3>
               
               <div className="sidebar-items-list">
-                {orders[selectedTable].map((item) => (
+                {(orders[selectedTable] || []).map((item) => (
                   <div key={item.id} className="sidebar-item">
                     <div className="sidebar-item-image">
                       {item.image && item.image.trim() !== '' ? (
