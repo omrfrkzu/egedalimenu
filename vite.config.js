@@ -26,19 +26,11 @@ export default defineConfig({
           if (id.includes('node_modules')) {
             return 'vendor'
           }
-        },
-        // Chunk boyut uyarı limiti
-        chunkSizeWarningLimit: 1000
+        }
       }
     },
     // Minification optimizasyonları
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Production'da console.log'ları kaldır
-        drop_debugger: true
-      }
-    },
+    minify: 'esbuild', // terser yerine esbuild kullan (daha hızlı)
     // Source map sadece development'ta
     sourcemap: false,
     // CSS code splitting

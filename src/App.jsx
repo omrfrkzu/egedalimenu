@@ -249,6 +249,11 @@ function App() {
     )
   }, [accountModalState.tableId, orders])
 
+  // Sayfa başlığını ayarla
+  useEffect(() => {
+    document.title = 'Egedalı Gurme | Menü'
+  }, [])
+
   useEffect(() => {
     const checkIsMobile = () => {
       setIsMobile(window.matchMedia('(max-width: 1024px)').matches)
@@ -473,7 +478,7 @@ function App() {
   }, [selectedTable, selectedAccountId, currentUser])
 
   // Müşteri sipariş tamamlama
-  const handleCustomerCompleteOrder = (tableId, note = '') => {
+  const handleCustomerCompleteOrder = useCallback((tableId, note = '') => {
     const customerAccount = orders[tableId]?.accounts?.[CUSTOMER_ACCOUNT_ID]
     const tableOrders = customerAccount?.items || []
     if (!tableOrders.length) return
@@ -786,9 +791,9 @@ function App() {
     }, 2000)
 
     console.log('Sipariş onaylandı:', { tableOrders, paymentMethod })
-  }
+  }, [orders, selectedAccountId, paymentRecords, occupiedTables, tableCreatedMap])
 
-  const handleCloseOrderPanel = () => {
+  const handleCloseOrderPanel = useCallback(() => {
     if (isMobile) {
       setIsOrderPanelVisible(false)
       setShowMenuOnly(false)
@@ -798,7 +803,7 @@ function App() {
     setIsStaffMenuFocused(false)
     setSelectedTable(null)
     setSelectedAccountId(null)
-  }
+  }, [isMobile])
 
   const handleMenuAction = useCallback(() => {
     if (!selectedTable || !selectedAccountId || selectedTableOrders.length === 0) return
