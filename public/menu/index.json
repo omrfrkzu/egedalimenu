@@ -1,0 +1,22 @@
+[
+  {
+    "id": "favoriler",
+    "label": "Favoriler"
+  },
+  {
+    "id": "kahvaltı-tabakları",
+    "label": "Kahvaltı Tabakları"
+  },
+  {
+    "id": "yumurta-çeşitleri",
+    "label": "Yumurta Çeşitleri"
+  },
+  {
+    "id": "sandviçler",
+    "label": "Sandviçler"
+  },
+  {
+    "id": "sıcak-lezzetler",
+    "label": "Sıcak Lezzetler"
+  }
+]

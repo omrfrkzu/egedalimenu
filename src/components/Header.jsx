@@ -61,17 +61,23 @@ const Header = ({
       </div>
       
       <div className="logo">
-        <img 
-          src="/logo.png" 
-          alt="Egedalı Gurme Logo" 
-          className="logo-image"
-          onError={(e) => {
-            e.target.style.display = 'none'
-            if (e.target.nextSibling) {
-              e.target.nextSibling.style.display = 'flex'
-            }
-          }}
-        />
+        <picture>
+          <source srcSet="/logo.avif" type="image/avif" />
+          <source srcSet="/logo.webp" type="image/webp" />
+          <img 
+            src="/logo.webp" 
+            alt="Egedalı Gurme Logo" 
+            className="logo-image"
+            loading="eager"
+            decoding="async"
+            onError={(e) => {
+              e.target.style.display = 'none'
+              if (e.target.nextSibling) {
+                e.target.nextSibling.style.display = 'flex'
+              }
+            }}
+          />
+        </picture>
         <div className="logo-fallback" style={{ display: 'none' }}>
           <span className="logo-icon">🍽️</span>
           <span className="logo-text">Egedalı Gurme</span>
@@ -184,9 +190,10 @@ const Header = ({
                         <div className="cart-item-image">
                           {item.image && item.image.trim() !== '' ? (
                             <>
-                              <img 
+                          <img 
                                 src={item.image} 
                                 alt={item.name}
+                            loading="lazy"
                                 onError={(e) => {
                                   if (e.target && e.target.nextSibling) {
                                     e.target.style.display = 'none'

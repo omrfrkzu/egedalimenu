@@ -1,0 +1,112 @@
+[
+  {
+    "name": "İTALYAN PASTIRMALI OMLET",
+    "slug": "i-talyan-pastirmali-omlet---",
+    "price": "380.00₺",
+    "description": "YAYIK TEREYAĞINDA OMLET, ÜSTÜNDE ÇITIR PASATIRMA VE YANINDA YEŞİLLİK İLE SERVİS EDİLİR.",
+    "image": "https://framerusercontent.com/images/T9nYKYoNyBYbbBziaPiNpYxVI.png?width=1080&height=1080",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 15
+  },
+  {
+    "name": "Macchiato",
+    "slug": "macchiato---",
+    "price": "115.00₺",
+    "description": "3 Yumurta, Sucuk, Taze Kaşar, Mevsim Yeşillikleri, Meyve Eşliğinde",
+    "image": "https://framerusercontent.com/images/yfToShzmEsSyNKmUv44keS03XU.png?width=653&height=656",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 19
+  },
+  {
+    "name": "Sucuklu Special",
+    "slug": "sucuklu-special---",
+    "price": "475.00₺",
+    "description": "Ciabatta Ekmeği, Humus, Tereyağında Göz Yumurta, Kızarmış Sucuk, Mevsim Meyve",
+    "image": "https://framerusercontent.com/images/EEyV64CcSnb99hMthjvqKk.jpg?width=768&height=512",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 23
+  },
+  {
+    "name": "Sucuklu Yumurta",
+    "slug": "sucuklu-yumurta---",
+    "price": "280.00₺",
+    "description": "Köy Yumurtası, Kasap Sucuğu, Yayık Tereyağı, Kaya Tuzu",
+    "image": "https://framerusercontent.com/images/b3sFPBSO4VkGjIGrEiI0V33anOA.jpeg?width=800&height=600",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 24
+  },
+  {
+    "name": "Kavurmalı Yumurta",
+    "slug": "kavurmalı-yumurta---",
+    "price": "280.00₺",
+    "description": "Köy Yumurtası, Dana Kavurma, Yayık Tereyağı, Kaya Tuzu",
+    "image": "https://framerusercontent.com/images/ePnbv7uWVTrYvzXI8Rz00Xckc.jpg?width=730&height=535",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 25
+  },
+  {
+    "name": "Pastırmalı Yumurta",
+    "slug": "pastırmalı-yumurta---",
+    "price": "280.00₺",
+    "description": "Köy Yumurtası, Antrikot Pastırma, Yayık Tereyağı, Kaya Tuzu",
+    "image": "https://framerusercontent.com/images/7PZ57atj5b3gRt9JF7oapabWDA.jpg?width=512&height=384",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 26
+  },
+  {
+    "name": "Beyaz Peynirli Menemen",
+    "slug": "beyaz-peynirli-menemen---",
+    "price": "250.00₺",
+    "description": "Beyaz Peynir, Domates, Yeşil Biber, Köy Yumurtası, Kaya Tuzu",
+    "image": "https://framerusercontent.com/images/cotrC8RKE9n6rpzOeBhFYtHKAE.jpg?width=730&height=535",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 27
+  },
+  {
+    "name": "Kaşarlı Menemen",
+    "slug": "kaşarlı-menemen---",
+    "price": "250.00₺",
+    "description": "Taze Kaşar Peyniri, Domates, Yeşil Biber, Köy Yumurtası, Kaya Tuzu",
+    "image": "https://framerusercontent.com/images/ak0yROQtCNribicu2SC3GW6esM4.jpg?width=1024&height=576",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 28
+  },
+  {
+    "name": "Sade Menemen",
+    "slug": "sade-menemen---",
+    "price": "220.00₺",
+    "description": "Taze Domates, Yeşil Biber, Köy Yumurtası, Kaya Tuzu",
+    "image": "https://framerusercontent.com/images/ak0yROQtCNribicu2SC3GW6esM4.jpg?width=1024&height=576",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 29
+  },
+  {
+    "name": "Kaşarlı Omlet",
+    "slug": "kaşarlı-omlet---",
+    "price": "250.00₺",
+    "description": "Taze Süt Kaşarı ve 2 Yumurta ile Servis Edilir",
+    "image": "https://framerusercontent.com/images/wVzvqsMyhDmUaXTuSYMKD4HI.jpg?width=768&height=512",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 30
+  },
+  {
+    "name": "İtalyan Pastırmalı Omlet",
+    "slug": "italyan-pastırmalı-omlet---",
+    "price": "435.00₺",
+    "description": "Çemensiz pastırma, humus,Tereyağlı 2 Yumurta ve yeşillik ile Servis Edilir",
+    "image": "https://framerusercontent.com/images/D2eLtE2xee2P83O0byxO7hJGp0k.png?width=711&height=636",
+    "category": "Yumurta Çeşitleri",
+    "categoryCode": "twu2yZs_Y",
+    "__generatedId": 31
+  }
+]

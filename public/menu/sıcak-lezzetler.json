@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Ekmek Üzeri Pastırmalı Yumurta",
+    "slug": "ekmek-üzeri-pastırmalı-yumurta---",
+    "price": "475.00₺",
+    "description": "Ekmek Üzeri Humus, Çırpılmış Yumurta Ve Çıtır Pastırma Mevsim Yeşillikleri",
+    "image": "https://framerusercontent.com/images/D2eLtE2xee2P83O0byxO7hJGp0k.png?width=711&height=636",
+    "category": "Sıcak Lezzetler",
+    "categoryCode": "o9D7pjkuV",
+    "__generatedId": 20
+  },
+  {
+    "name": "Ekmek Üzeri Çemensiz Pastırmalı Yumurta",
+    "slug": "ekmek-üzeri-çemensiz-pastırmalı-yumurta---",
+    "price": "475.00₺",
+    "description": "Ekmek Üzerine Humus, İki Adet Çırpılmış Yumurta Tereyağında Çıtırdatılmış Çemensiz Pastırma ve Mevsim Yeşillikleri",
+    "image": "https://framerusercontent.com/images/feDELvBv3OZ27zwzKO7kWohLnk.png?width=734&height=623",
+    "category": "Sıcak Lezzetler",
+    "categoryCode": "o9D7pjkuV",
+    "__generatedId": 21
+  },
+  {
+    "name": "Kıymalı Fırınlanmış Mantı",
+    "slug": "kıymalı-fırınlanmış-mantı---",
+    "price": "425.00₺",
+    "description": "Kızarmış Hellim Peyniri, Mevsim Yeşillikleri, Çeri Domates",
+    "image": "https://framerusercontent.com/images/fH70GybjYMcAlPG0Sm0Y1QMveGQ.png?width=636&height=638",
+    "category": "Sıcak Lezzetler",
+    "categoryCode": "o9D7pjkuV",
+    "__generatedId": 22
+  }
+]

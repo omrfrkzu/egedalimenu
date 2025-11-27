@@ -27,8 +27,11 @@ const MenuView = ({
   onUpdateQuantity,
   isAdmin = false
 }) => {
-  const [menuData, setMenuData] = useState([])
+  const [categoryIndex, setCategoryIndex] = useState([])
+  const [categoryItems, setCategoryItems] = useState({})
   const [loading, setLoading] = useState(true)
+  const [loadingCategoryId, setLoadingCategoryId] = useState('')
+  const [menuError, setMenuError] = useState('')
   const [selectedItem, setSelectedItem] = useState(null)
   const [orderNote, setOrderNote] = useState('')
   const [activeFloor, setActiveFloor] = useState(null)
@@ -53,115 +56,119 @@ const MenuView = ({
     { id: 15, number: 3, floor: 'Bahçe' },
   ]
   
-  const getTableTotal = (tableId) => {
-    const tableOrders = orders[tableId] || []
-    return tableOrders.reduce((sum, item) => sum + item.price * item.quantity, 0)
-  }
-
-  // Menü verilerini yükle
-  useEffect(() => {
-    fetch('/menu-data-clean.json')
-      .then(res => res.json())
-      .then(data => {
-        setMenuData(data)
-        setLoading(false)
-      })
-      .catch(err => {
-        console.error('Menü verileri yüklenirken hata:', err)
-        setLoading(false)
-      })
-  }, [])
-
-  // Kategorileri ve menü öğelerini dinamik olarak oluştur
-  const { categories, menuItems } = useMemo(() => {
-    if (!menuData || menuData.length === 0) {
-      return { categories: [], menuItems: {} }
-    }
-    // Kategorileri topla
-    const categorySet = new Set()
-    menuData.forEach(item => {
-      if (!item.category) return
-
-      const isMezeCategory = item.category.toLocaleLowerCase('tr-TR') === 'mezeler'
-      // Mezeler kategorisi sadece admin tarafından görülebilsin
-      if (isMezeCategory && !isAdmin) {
-        return
-      }
-
-      if (item.category) {
-        categorySet.add(item.category)
-      }
-    })
-    
-    const categoryList = Array.from(categorySet).map((cat, index) => ({
-      id: cat.toLowerCase().replace(/\s+/g, '-'),
-      label: cat
-    }))
-    
-    // İlk kategoriyi varsayılan olarak ayarla
-    const defaultCategory = categoryList[0]?.id || ''
-    
-    // Menü öğelerini kategorilere göre grupla
-    const groupedItems = {}
-    menuData.forEach((item, index) => {
-      if (!item.category) return
-
-      const isMezeCategory = item.category.toLocaleLowerCase('tr-TR') === 'mezeler'
-      // Mezeler kategorisindeki ürünler admin değilse tamamen gizlenir
-      if (isMezeCategory && !isAdmin) {
-        return
-      }
-
-      const categoryId = item.category.toLowerCase().replace(/\s+/g, '-')
-      if (!groupedItems[categoryId]) {
-        groupedItems[categoryId] = []
-      }
-      
-      // Fiyatı parse et (₺ işaretini kaldır ve sayıya çevir)
+  const normalizeMenuItems = useCallback((items = []) => {
+    return items.map((item, index) => {
       const priceStr = item.price?.replace(/[₺\s]/g, '') || '0'
       const price = parseFloat(priceStr) || 0
-      
-      // Görsel URL'sini koru - sadece gerçekten geçersiz URL'leri filtrele
       let imageUrl = item.image || ''
-      // Geçerli URL'leri koru (http://, https://, veya / ile başlayan)
-      // Sadece "ges/" gibi kısmi ve geçersiz URL'leri filtrele
-      if (imageUrl && 
-          !imageUrl.startsWith('http://') && 
-          !imageUrl.startsWith('https://') && 
-          !imageUrl.startsWith('/') &&
-          imageUrl.startsWith('ges/')) {
-        // Sadece "ges/" ile başlayan ve http/https olmayan URL'leri filtrele
+      if (
+        imageUrl &&
+        !imageUrl.startsWith('http://') &&
+        !imageUrl.startsWith('https://') &&
+        !imageUrl.startsWith('/') &&
+        imageUrl.startsWith('ges/')
+      ) {
         imageUrl = ''
       }
-      
-      groupedItems[categoryId].push({
-        id: index + 1,
+
+      const generatedId = item.__generatedId ?? item.id ?? `${item.slug || 'menu-item'}-${index + 1}`
+
+      return {
+        id: generatedId,
         name: formatProductName(item.name),
-        price: price,
+        price,
         image: imageUrl,
         description: item.description || '',
         slug: item.slug || '',
         category: item.category,
         categoryCode: item.categoryCode || ''
-      })
+      }
     })
-    
-    return {
-      categories: categoryList,
-      menuItems: groupedItems,
-      defaultCategory
+  }, [])
+
+  const fetchCategoryItems = useCallback(async (categoryId) => {
+    if (!categoryId) return
+    try {
+      setLoadingCategoryId(categoryId)
+      const response = await fetch(`/menu/${categoryId}.json`)
+      if (!response.ok) {
+        throw new Error(`Kategori ${categoryId} yüklenemedi`)
+      }
+      const data = await response.json()
+      setCategoryItems(prev => ({
+        ...prev,
+        [categoryId]: normalizeMenuItems(data)
+      }))
+    } catch (error) {
+      console.error(`Kategori ${categoryId} verileri alınırken hata:`, error)
+      setMenuError('Menü verileri yüklenirken bir hata oluştu.')
+    } finally {
+      setLoadingCategoryId(current => (current === categoryId ? '' : current))
     }
-  }, [menuData, isAdmin])
+  }, [normalizeMenuItems])
+
+  const getTableTotal = (tableId) => {
+    const tableOrders = orders[tableId] || []
+    return tableOrders.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  }
+
+  // Menü kategorilerini yükle
+  useEffect(() => {
+    let isMounted = true
+
+    const loadIndex = async () => {
+      try {
+        const response = await fetch('/menu/index.json')
+        if (!response.ok) {
+          throw new Error('Menü dizini yüklenemedi')
+        }
+        const data = await response.json()
+        if (isMounted) {
+          setCategoryIndex(data)
+          setLoading(false)
+        }
+      } catch (error) {
+        console.error('Menü kategorileri yüklenirken hata:', error)
+        if (isMounted) {
+          setMenuError('Menü verileri yüklenirken bir hata oluştu.')
+          setLoading(false)
+        }
+      }
+    }
+
+    loadIndex()
+
+    return () => {
+      isMounted = false
+    }
+  }, [])
+
+  const visibleCategories = useMemo(() => {
+    if (!categoryIndex || categoryIndex.length === 0) {
+      return []
+    }
+
+    return categoryIndex.filter((category) => {
+      const label = category.label || ''
+      const isMezeCategory = label.toLocaleLowerCase('tr-TR') === 'mezeler'
+      if (isMezeCategory && !isAdmin) {
+        return false
+      }
+      return true
+    })
+  }, [categoryIndex, isAdmin])
 
   const [activeCategory, setActiveCategory] = useState('')
   const [showTableSelector, setShowTableSelector] = useState(false)
 
   // Kategori değiştiğinde ilk kategoriyi ayarla
   useEffect(() => {
-    if (categories.length > 0 && !activeCategory) {
-      setActiveCategory(categories[0].id)
+    if (visibleCategories.length === 0) return
+    const isActiveVisible = visibleCategories.some(category => category.id === activeCategory)
+    if (!activeCategory || !isActiveVisible) {
+      setActiveCategory(visibleCategories[0]?.id || '')
     }
-  }, [categories, activeCategory])
+  }, [visibleCategories, activeCategory])
 
   // Sipariş tamamlandığında veya masa değiştiğinde not alanını temizle
   useEffect(() => {
@@ -251,6 +258,12 @@ const MenuView = ({
     }
   }, [showTableSelector, activeFloor, tablesByFloor])
 
+  useEffect(() => {
+    if (!activeCategory) return
+    if (categoryItems[activeCategory]) return
+    fetchCategoryItems(activeCategory)
+  }, [activeCategory, categoryItems, fetchCategoryItems])
+
   const handleItemClick = useCallback((item) => {
     if (!item.description) return
     setSelectedItem(item)
@@ -264,6 +277,19 @@ const MenuView = ({
         </div>
         <div style={{ textAlign: 'center', padding: '40px' }}>
           <p>Menü yükleniyor...</p>
+        </div>
+      </div>
+    )
+  }
+
+  if (menuError) {
+    return (
+      <div className="menu-view">
+        <div className="menu-header">
+          <h2>Menü</h2>
+        </div>
+        <div style={{ textAlign: 'center', padding: '40px' }}>
+          <p>{menuError}</p>
         </div>
       </div>
     )
@@ -398,7 +424,7 @@ const MenuView = ({
       )}
 
       <div className="categories-scroll">
-        {categories.map((category) => (
+        {visibleCategories.map((category) => (
           <button
             key={category.id}
             className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
@@ -410,7 +436,12 @@ const MenuView = ({
       </div>
 
       <div className="menu-items-grid">
-        {menuItems[activeCategory]?.map((item) => {
+        {loadingCategoryId === activeCategory && !categoryItems[activeCategory] && (
+          <div className="menu-loading-state">
+            <p>Menü yükleniyor...</p>
+          </div>
+        )}
+        {categoryItems[activeCategory]?.map((item) => {
           const isMezeActiveCategory = activeCategory === 'mezeler'
           // Mezeler kategorisinde açıklama ve detay kapalı olacak
           const hasDescription = Boolean(item.description) && !isMezeActiveCategory
@@ -556,6 +587,7 @@ const MenuView = ({
                       <img 
                         src={selectedItem.image} 
                         alt={selectedItem.name}
+                        loading="lazy"
                         onError={(e) => {
                           if (e.target && e.target.nextSibling) {
                             e.target.style.display = 'none'

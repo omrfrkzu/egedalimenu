@@ -8,35 +8,28 @@ export default defineConfig({
     open: true
   },
   build: {
+    target: 'es2020',
     outDir: 'dist',
     assetsDir: 'assets',
-    // Production build optimizasyonları
     rollupOptions: {
       output: {
         manualChunks: (id) => {
-          // React vendor chunk
           if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
-            return 'react-vendor'
+            return 'react'
           }
-          // Lucide icons chunk
           if (id.includes('node_modules/lucide-react')) {
-            return 'lucide-icons'
+            return 'icons'
           }
-          // Diğer node_modules
           if (id.includes('node_modules')) {
             return 'vendor'
           }
         }
       }
     },
-    // Minification optimizasyonları
-    minify: 'esbuild', // terser yerine esbuild kullan (daha hızlı)
-    // Source map sadece development'ta
+    minify: 'esbuild',
     sourcemap: false,
-    // CSS code splitting
     cssCodeSplit: true
   },
-  // Optimize dependencies
   optimizeDeps: {
     include: ['react', 'react-dom', 'react-router-dom', 'lucide-react']
   }

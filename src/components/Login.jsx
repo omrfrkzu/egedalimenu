@@ -64,17 +64,23 @@ const Login = ({ onLogin, mode = 'admin' }) => {
     <div className="login-container">
       <div className="login-box">
         <div className="login-header">
-          <img 
-            src="/logo.png" 
-            alt="Egedalı Gurme Logo" 
-            className="login-icon"
-            onError={(e) => {
-              e.target.style.display = 'none'
-              if (e.target.nextSibling) {
-                e.target.nextSibling.style.display = 'block'
-              }
-            }}
-          />
+          <picture>
+            <source srcSet="/logo.avif" type="image/avif" />
+            <source srcSet="/logo.webp" type="image/webp" />
+            <img 
+              src="/logo.webp" 
+              alt="Egedalı Gurme Logo" 
+              className="login-icon"
+              loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                e.target.style.display = 'none'
+                if (e.target.nextSibling) {
+                  e.target.nextSibling.style.display = 'block'
+                }
+              }}
+            />
+          </picture>
           <span className="login-icon-fallback" style={{ display: 'none' }}>🍽️</span>
           <h1>Egedalı Gurme</h1>
           <p>{mode === 'admin' ? 'Yönetici Girişi' : 'Garson Girişi'}</p>

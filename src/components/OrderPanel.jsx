@@ -64,6 +64,7 @@ const OrderPanel = ({
                         <img
                           src={item.image}
                           alt={item.name}
+                          loading="lazy"
                           onError={(e) => {
                             if (e.target && e.target.nextSibling) {
                               e.target.style.display = 'none'

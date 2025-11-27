@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Serpme Kahvaltı",
+    "slug": "serpme-kahvalti-iki---",
+    "price": "1600.00₺",
+    "description": "Beyaz Peynir, Kaşar ve Tulum Peyniri, Salam, Dana Füme, Kekikli Sucuk, Siyah ve Yeşil Zeytin, Sahanda Yumurta veya Menemen, Simit, Tam Buğday Ekmeği, Bal, Kaymak ve Reçel Çeşitleri, Domates, Salatalık, Yeşillikler, Paçanga ve Ispanaklı Sigara Böreği, Sınırsız Çay",
+    "image": "https://framerusercontent.com/images/PwpTLXTUosPHHTk0c4KufIg3Y.webp?width=1024&height=1024",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 1
+  },
+  {
+    "name": "Sucuklu İtalyan Omlet",
+    "slug": "sucuklu-italyan---",
+    "price": "475.00₺",
+    "description": "3 Yumurta, Sucuk, Taze Kaşar, Mevsim Yeşillikleri, Meyve Eşliğinde",
+    "image": "https://framerusercontent.com/images/yfToShzmEsSyNKmUv44keS03XU.png?width=653&height=656",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 2
+  },
+  {
+    "name": "Ajvar & Et Füme Sandwich",
+    "slug": "ajvar-et-fume-sandwich---",
+    "price": "475.00₺",
+    "description": "Ajvar Sos, Taze Süt Kaşarı, Boşnak Kuru Et, Pembe Domates, Roka",
+    "image": "https://framerusercontent.com/images/lkhQufwZM2uRWm7j1pI4G9a01g.png?width=359&height=359",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 3
+  },
+  {
+    "name": "Gurme Bratwurst Tabağı",
+    "slug": "gurme-bratwurst---",
+    "price": "550.00₺",
+    "description": "Bir Adet Izgara Bratwurts Sosis, 2 Göz Yumurta, Turşu, Ketçap, Mayonez Ve Mevsim Meyveleri İle",
+    "image": "https://framerusercontent.com/images/6KzTKCkGHFt7bSl5s7mI3YCPpM.png?width=627&height=631",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 4
+  },
+  {
+    "name": "Bergama Sofrası",
+    "slug": "bergama-sofra---",
+    "price": "365.00₺",
+    "description": "Bergama Tulumu, Pastırma, Domates, Fesleğen, Hardal",
+    "image": "https://framerusercontent.com/images/lkhQufwZM2uRWm7j1pI4G9a01g.png?width=359&height=359",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 5
+  },
+  {
+    "name": "BEŞİKTAŞ kAHVALTISI",
+    "slug": "beşi-ktaş-kahvaltisi---",
+    "price": "750.00₺",
+    "description": "Günlük Sokak Simidi, Göz Yumurta, Boşnak Kuru Et, Tokat Bez Sucuk, Trakya Eski Kaşar, Çanakkale Ezine Peyniri, Kalamata Zeytin, Süt Reçeli, Manda Kaymağı - Bal, Mini Söğüş",
+    "image": "https://framerusercontent.com/images/60bRxKIowsAyBZA9X5caHwhcR8.png?width=592&height=394",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 6
+  },
+  {
+    "name": "BURRATA",
+    "slug": "burrata---",
+    "price": "650.00₺",
+    "description": "Pembe Köy Domatesi, Çam Fıstığı, Dilim Zeytin, Manda Burrata, Toz Parmesan, Balzemik Kreması",
+    "image": "https://framerusercontent.com/images/PUhEAOwRX0U14ZId80UQCd4j4ro.jpg?width=439&height=292",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 7
+  },
+  {
+    "name": "ABAZA SANDWİCH",
+    "slug": "abaza-sandwi-ch---",
+    "price": "325.00₺",
+    "description": "İtalyan Ciabatta Ekmeğine, İtalyan Mezesi, Dana Jambon, Abaza Peyniri, Zeytinyağlı Nar Ekşili Kuru Domates Salatası, Roka, Ranch Sos",
+    "image": "https://framerusercontent.com/images/Q5jHJmijctITNLqynv91ChpjE.jpg?width=2832&height=4240",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 8
+  },
+  {
+    "name": "KAHVALTI TABAĞI EGE",
+    "slug": "kahvalti-tabaği-ege---",
+    "price": "580.00₺",
+    "description": "Yöresel tel peyniri, ‘Kars’ eski kaşarı, ‘Ezine’ beyaz peynir, GELİNCİK reçeli, bal, kaymak, tereyağı, yeşil zeytin, siyah zeytin, haşlanmış yumurta, ıspanaklı sigara böreği, çengelköy salatalık, domates, biber, roka, ceviz, kuru kayısı",
+    "image": "https://framerusercontent.com/images/R7DaX34jGcHx9YY7a1i8PaMXP4.png?width=600&height=400",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 9
+  },
+  {
+    "name": "PASTIRMA HUMUS",
+    "slug": "pastirma-humus---",
+    "price": "550.00₺",
+    "description": "ekşi mayalı ekmek üzerine humus, pastırma ve kavrulmuş nohut",
+    "image": "https://framerusercontent.com/images/vPwK0Lay4o7ebPCYyIVK9xy3c0.jpg?width=1179&height=1175",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 10
+  },
+  {
+    "name": "AKDENİZ OMLET",
+    "slug": "akdeni-z-omlet---",
+    "price": "475.00₺",
+    "description": "sade omlet, akdeniz yeşillikleri, domates, salatalık, tulum peyniri, zeytin salatası",
+    "image": "https://framerusercontent.com/images/E6rawn3xA4jKSf0pBLviH8zxwg.png?width=1600&height=1600",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 11
+  },
+  {
+    "name": "PESTO - FÜME",
+    "slug": "pesto-füme---",
+    "price": "390.00₺",
+    "description": "YUMUŞAK BEYAZ PEYNİR, YEŞİL PESTO SOS, ANTRİKOT FÜME",
+    "image": "https://framerusercontent.com/images/RQ7xeM0MRkqJO1Wu2HNxB1BscZs.jpg?width=1300&height=575",
+    "category": "Favoriler",
+    "categoryCode": "sdQMagOj9",
+    "__generatedId": 13
+  }
+]
