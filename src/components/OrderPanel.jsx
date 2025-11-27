@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, memo, useMemo } from 'react'
 import { X, Plus, Minus, Trash2, Check } from 'lucide-react'
 import './OrderPanel.css'
 
@@ -14,7 +14,7 @@ const OrderPanel = ({
 }) => {
   const [selectedPayment, setSelectedPayment] = useState(null)
   const [showPaymentOptions, setShowPaymentOptions] = useState(false)
-  const total = orders.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const total = useMemo(() => orders.reduce((sum, item) => sum + item.price * item.quantity, 0), [orders])
   const paymentMethods = [
     'Kredi Kartı',
     'Nakit',
@@ -170,5 +170,5 @@ const OrderPanel = ({
   )
 }
 
-export default OrderPanel
+export default memo(OrderPanel)
 

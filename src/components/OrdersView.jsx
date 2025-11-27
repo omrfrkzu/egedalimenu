@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo, useMemo } from 'react'
 import { Check } from 'lucide-react'
 import './OrdersView.css'
 
@@ -11,13 +11,19 @@ const OrdersView = ({ pendingOrders, preparedOrders, onMarkPrepared }) => {
     return { items: orderData.items || [], note: orderData.note || '' }
   }
 
-  const pendingOrdersList = Object.entries(pendingOrders)
-    .map(([tableId, orderData]) => [tableId, normalizeOrder(orderData)])
-    .filter(([_, order]) => order.items.length > 0)
+  const pendingOrdersList = useMemo(() => 
+    Object.entries(pendingOrders)
+      .map(([tableId, orderData]) => [tableId, normalizeOrder(orderData)])
+      .filter(([_, order]) => order.items.length > 0),
+    [pendingOrders]
+  )
   
-  const preparedOrdersList = Object.entries(preparedOrders)
-    .map(([tableId, orderData]) => [tableId, normalizeOrder(orderData)])
-    .filter(([_, order]) => order.items.length > 0)
+  const preparedOrdersList = useMemo(() =>
+    Object.entries(preparedOrders)
+      .map(([tableId, orderData]) => [tableId, normalizeOrder(orderData)])
+      .filter(([_, order]) => order.items.length > 0),
+    [preparedOrders]
+  )
 
   return (
     <div className="orders-view">
@@ -114,5 +120,5 @@ const OrdersView = ({ pendingOrders, preparedOrders, onMarkPrepared }) => {
   )
 }
 
-export default OrdersView
+export default memo(OrdersView)
 

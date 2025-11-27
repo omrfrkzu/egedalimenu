@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, memo, useMemo } from 'react'
 import { Menu, Table, BarChart3, Settings, ShoppingCart, X, User, Bell, LogOut } from 'lucide-react'
 import './Sidebar.css'
 
@@ -15,7 +15,7 @@ const Sidebar = ({
   onLogout
 }) => {
   const notificationRef = useRef(null)
-  const unreadCount = notifications.filter(n => !n.read).length
+  const unreadCount = useMemo(() => notifications.filter(n => !n.read).length, [notifications])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -149,5 +149,5 @@ const Sidebar = ({
   )
 }
 
-export default Sidebar
+export default memo(Sidebar)
 

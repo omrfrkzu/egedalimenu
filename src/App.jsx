@@ -1,17 +1,27 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useState, useCallback, lazy, Suspense } from 'react'
 import { Routes, Route, useNavigate } from 'react-router-dom'
 import { CheckCircle } from 'lucide-react'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
 import TablesView from './components/TablesView'
 import MenuView from './components/MenuView'
-import ReportsView from './components/ReportsView'
-import SettingsView from './components/SettingsView'
 import OrderPanel from './components/OrderPanel'
-import OrdersView from './components/OrdersView'
-import AdminLogin from './pages/AdminLogin'
-import WaiterLogin from './pages/WaiterLogin'
+import { useLocalStorageDebounce } from './hooks/useLocalStorageDebounce'
 import './App.css'
+
+// Lazy load heavy components
+const ReportsView = lazy(() => import('./components/ReportsView'))
+const SettingsView = lazy(() => import('./components/SettingsView'))
+const OrdersView = lazy(() => import('./components/OrdersView'))
+const AdminLogin = lazy(() => import('./pages/AdminLogin'))
+const WaiterLogin = lazy(() => import('./pages/WaiterLogin'))
+
+// Loading component
+const LoadingFallback = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '200px' }}>
+    <p>Yükleniyor...</p>
+  </div>
+)
 
 const DEFAULT_ACCOUNT_ID = 'default'
 const CUSTOMER_ACCOUNT_ID = 'customer'
@@ -141,7 +151,7 @@ function App() {
     return Array.from(itemsMap.values())
   }
 
-  const ensureTableHasAccount = (tableId, accountId, accountName = '') => {
+  const ensureTableHasAccount = useCallback((tableId, accountId, accountName = '') => {
     setOrders(prev => {
       const tableData = prev[tableId] || { accounts: {}, activeAccountId: accountId }
       if (tableData.accounts[accountId]) {
@@ -171,7 +181,7 @@ function App() {
         }
       }
     })
-  }
+  }, [])
 
   // Tüm hook'lar erken return'den önce çağrılmalı
   const selectedTableOrders = useMemo(() => {
@@ -284,59 +294,13 @@ function App() {
     }
   }, [isMobile, showMenuOnly])
 
-  // orders değiştiğinde localStorage'a kaydet
-  useEffect(() => {
-    try {
-      localStorage.setItem('restaurant_orders', JSON.stringify(orders))
-    } catch (error) {
-      console.error('orders kaydedilemedi:', error)
-    }
-  }, [orders])
-
-  // occupiedTables değiştiğinde localStorage'a kaydet
-  useEffect(() => {
-    try {
-      localStorage.setItem('restaurant_occupied_tables', JSON.stringify(occupiedTables))
-    } catch (error) {
-      console.error('occupiedTables kaydedilemedi:', error)
-    }
-  }, [occupiedTables])
-
-  // tableCreatedMap değiştiğinde localStorage'a kaydet
-  useEffect(() => {
-    try {
-      localStorage.setItem('restaurant_table_created_map', JSON.stringify(tableCreatedMap))
-    } catch (error) {
-      console.error('tableCreatedMap kaydedilemedi:', error)
-    }
-  }, [tableCreatedMap])
-
-  // pendingOrders değiştiğinde localStorage'a kaydet
-  useEffect(() => {
-    try {
-      localStorage.setItem('restaurant_pending_orders', JSON.stringify(pendingOrders))
-    } catch (error) {
-      console.error('pendingOrders kaydedilemedi:', error)
-    }
-  }, [pendingOrders])
-
-  // preparedOrders değiştiğinde localStorage'a kaydet
-  useEffect(() => {
-    try {
-      localStorage.setItem('restaurant_prepared_orders', JSON.stringify(preparedOrders))
-    } catch (error) {
-      console.error('preparedOrders kaydedilemedi:', error)
-    }
-  }, [preparedOrders])
-
-  // paymentRecords değiştiğinde localStorage'a kaydet (kalıcı veri)
-  useEffect(() => {
-    try {
-      localStorage.setItem('restaurant_payment_records', JSON.stringify(paymentRecords))
-    } catch (error) {
-      console.error('paymentRecords kaydedilemedi:', error)
-    }
-  }, [paymentRecords])
+  // localStorage'a debounce ile kaydet - performans optimizasyonu
+  useLocalStorageDebounce('restaurant_orders', orders, 500)
+  useLocalStorageDebounce('restaurant_occupied_tables', occupiedTables, 500)
+  useLocalStorageDebounce('restaurant_table_created_map', tableCreatedMap, 500)
+  useLocalStorageDebounce('restaurant_pending_orders', pendingOrders, 500)
+  useLocalStorageDebounce('restaurant_prepared_orders', preparedOrders, 500)
+  useLocalStorageDebounce('restaurant_payment_records', paymentRecords, 500)
 
   useEffect(() => {
     // localStorage'dan kullanıcı bilgisini yükle
@@ -366,7 +330,7 @@ function App() {
     }
   }, [])
 
-  const handleLogout = () => {
+  const handleLogout = useCallback(() => {
     setCurrentUser(null)
     localStorage.removeItem('currentUser')
     setSelectedTable(null)
@@ -377,7 +341,7 @@ function App() {
     setAccountModalState({ isOpen: false, tableId: null })
     setIsStaffMenuFocused(false)
     // Not: pendingOrders ve preparedOrders localStorage'da kalır, çıkış yapılsa bile siparişler görünmeye devam eder
-  }
+  }, [])
 
   const selectTableAccount = (tableId, accountId, accountName = '') => {
     if (!tableId || !accountId) return
@@ -416,7 +380,7 @@ function App() {
     }
   }
 
-  const handleTableSelect = (tableId, options = {}) => {
+  const handleTableSelect = useCallback((tableId, options = {}) => {
     // Müşteri modunda masa seçimi temizleniyorsa
     if (!currentUser && tableId === null) {
       setSelectedTable(null)
@@ -449,23 +413,23 @@ function App() {
     ensureTableHasAccount(tableId, DEFAULT_ACCOUNT_ID)
     setAccountModalState({ isOpen: true, tableId })
     setAccountNameInput('')
-  }
+  }, [currentUser, occupiedTables, selectedTable, selectTableAccount])
 
-  const handleAccountModalClose = () => {
+  const handleAccountModalClose = useCallback(() => {
     setAccountModalState({ isOpen: false, tableId: null })
     setAccountNameInput('')
-  }
+  }, [])
 
-  const handleCreateNamedAccount = () => {
+  const handleCreateNamedAccount = useCallback(() => {
     const tableId = accountModalState.tableId
     const trimmedName = accountNameInput.trim()
     if (!tableId || !trimmedName) return
     const newAccountId = `acc-${Date.now()}`
     selectTableAccount(tableId, newAccountId, trimmedName)
     handleAccountModalClose()
-  }
+  }, [accountModalState.tableId, accountNameInput, selectTableAccount, handleAccountModalClose])
 
-  const handleAddItem = (item) => {
+  const handleAddItem = useCallback((item) => {
     if (!selectedTable) return
     const targetAccountId = currentUser ? selectedAccountId : CUSTOMER_ACCOUNT_ID
     if (!targetAccountId) {
@@ -506,7 +470,7 @@ function App() {
         }
       }
     })
-  }
+  }, [selectedTable, selectedAccountId, currentUser])
 
   // Müşteri sipariş tamamlama
   const handleCustomerCompleteOrder = (tableId, note = '') => {
@@ -585,10 +549,10 @@ function App() {
     setTimeout(() => {
       setShowSuccessModal(false)
     }, 3000)
-  }
+  }, [orders])
 
   // Siparişi hazırlandı olarak işaretle
-  const handleMarkOrderPrepared = (tableId) => {
+  const handleMarkOrderPrepared = useCallback((tableId) => {
     // Eski format desteği: array ise { items, note: '' } formatına çevir
     const orderData = pendingOrders[tableId]
     let order
@@ -647,9 +611,9 @@ function App() {
         }
       }
     })
-  }
+  }, [pendingOrders])
 
-  const handleUpdateQuantity = (tableId, itemId, delta, accountIdOverride) => {
+  const handleUpdateQuantity = useCallback((tableId, itemId, delta, accountIdOverride) => {
     if (!tableId) return
     const targetAccountId = accountIdOverride
       || (currentUser ? selectedAccountId : CUSTOMER_ACCOUNT_ID)
@@ -683,9 +647,9 @@ function App() {
         }
       }
     })
-  }
+  }, [currentUser, selectedAccountId])
 
-  const handleRemoveItem = (tableId, itemId, accountIdOverride) => {
+  const handleRemoveItem = useCallback((tableId, itemId, accountIdOverride) => {
     if (!tableId) return
     const targetAccountId = accountIdOverride
       || (currentUser ? selectedAccountId : CUSTOMER_ACCOUNT_ID)
@@ -711,9 +675,9 @@ function App() {
         }
       }
     })
-  }
+  }, [currentUser, selectedAccountId])
 
-  const handleConfirmOrder = (tableId, paymentMethod, accountIdOverride) => {
+  const handleConfirmOrder = useCallback((tableId, paymentMethod, accountIdOverride) => {
     const targetAccountId = accountIdOverride || selectedAccountId
     if (!tableId || !targetAccountId || !paymentMethod) return
     const account = orders[tableId]?.accounts?.[targetAccountId]
@@ -836,7 +800,7 @@ function App() {
     setSelectedAccountId(null)
   }
 
-  const handleMenuAction = () => {
+  const handleMenuAction = useCallback(() => {
     if (!selectedTable || !selectedAccountId || selectedTableOrders.length === 0) return
     const tableId = selectedTable
     const wasAlreadyCreated = Boolean(tableCreatedMap[tableId])
@@ -859,17 +823,17 @@ function App() {
     setSelectedTable(null)
     setSelectedAccountId(null)
     setShowMenuOnly(false)
-  }
+  }, [selectedTable, selectedAccountId, selectedTableOrders, tableCreatedMap, isMobile])
 
-  const canAccessTab = (tabId) => {
+  const canAccessTab = useCallback((tabId) => {
     if (!currentUser) return false
     if (currentUser.role !== 'admin' && (tabId === 'raporlar' || tabId === 'ayarlar')) {
       return false
     }
     return true
-  }
+  }, [currentUser])
 
-  const handleTabChange = (tabId) => {
+  const handleTabChange = useCallback((tabId) => {
     if (!canAccessTab(tabId)) return
 
     setActiveTab(tabId)
@@ -884,7 +848,7 @@ function App() {
     if (isMobile) {
       setIsSidebarOpen(false)
     }
-  }
+  }, [isMobile])
 
   const renderContent = () => {
     // Müşteri modu - giriş yapmadan menü sayfası
@@ -911,11 +875,15 @@ function App() {
       case 'menü':
         return <MenuView onAddItem={handleAddItem} isAdmin={currentUser?.role === 'admin'} />
       case 'siparişler':
-        return <OrdersView 
-          pendingOrders={pendingOrders} 
-          preparedOrders={preparedOrders}
-          onMarkPrepared={handleMarkOrderPrepared}
-        />
+        return (
+          <Suspense fallback={<LoadingFallback />}>
+            <OrdersView 
+              pendingOrders={pendingOrders} 
+              preparedOrders={preparedOrders}
+              onMarkPrepared={handleMarkOrderPrepared}
+            />
+          </Suspense>
+        )
       case 'masalar':
         const isMenuPanelOpen = selectedTable && (!isMobile || showMenuOnly)
         return (
@@ -975,9 +943,17 @@ function App() {
             </div>
           )
         }
-        return <ReportsView stats={reportStats} paymentRecords={paymentRecords} />
+        return (
+          <Suspense fallback={<LoadingFallback />}>
+            <ReportsView stats={reportStats} paymentRecords={paymentRecords} />
+          </Suspense>
+        )
       case 'ayarlar':
-        return <SettingsView />
+        return (
+          <Suspense fallback={<LoadingFallback />}>
+            <SettingsView />
+          </Suspense>
+        )
       default:
         return <TablesView
           onTableSelect={handleTableSelect}
@@ -1217,7 +1193,9 @@ function App() {
               {mainLayout}
             </div>
           ) : (
-            <AdminLogin />
+            <Suspense fallback={<LoadingFallback />}>
+              <AdminLogin />
+            </Suspense>
           )
         } 
       />
@@ -1229,7 +1207,9 @@ function App() {
               {mainLayout}
             </div>
           ) : (
-            <WaiterLogin />
+            <Suspense fallback={<LoadingFallback />}>
+              <WaiterLogin />
+            </Suspense>
           )
         }
       />

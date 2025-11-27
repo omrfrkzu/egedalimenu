@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, memo, useCallback, useMemo } from 'react'
 import { Bell, LogOut, User, Menu, ShoppingCart, Plus, Minus, X, Check } from 'lucide-react'
 import './Header.css'
 
@@ -24,9 +24,9 @@ const Header = ({
   const notificationRef = useRef(null)
   const cartRef = useRef(null)
   const [showCart, setShowCart] = useState(false)
-  const unreadCount = notifications.filter(n => !n.read).length
-  const cartItemCount = customerCartItems.reduce((sum, item) => sum + item.quantity, 0)
-  const cartTotal = customerCartItems.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  const unreadCount = useMemo(() => notifications.filter(n => !n.read).length, [notifications])
+  const cartItemCount = useMemo(() => customerCartItems.reduce((sum, item) => sum + item.quantity, 0), [customerCartItems])
+  const cartTotal = useMemo(() => customerCartItems.reduce((sum, item) => sum + item.price * item.quantity, 0), [customerCartItems])
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -265,5 +265,5 @@ const Header = ({
   )
 }
 
-export default Header
+export default memo(Header)
 

@@ -13,11 +13,40 @@ export default defineConfig({
     // Production build optimizasyonları
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom']
-        }
+        manualChunks: (id) => {
+          // React vendor chunk
+          if (id.includes('node_modules/react') || id.includes('node_modules/react-dom') || id.includes('node_modules/react-router')) {
+            return 'react-vendor'
+          }
+          // Lucide icons chunk
+          if (id.includes('node_modules/lucide-react')) {
+            return 'lucide-icons'
+          }
+          // Diğer node_modules
+          if (id.includes('node_modules')) {
+            return 'vendor'
+          }
+        },
+        // Chunk boyut uyarı limiti
+        chunkSizeWarningLimit: 1000
       }
-    }
+    },
+    // Minification optimizasyonları
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true, // Production'da console.log'ları kaldır
+        drop_debugger: true
+      }
+    },
+    // Source map sadece development'ta
+    sourcemap: false,
+    // CSS code splitting
+    cssCodeSplit: true
+  },
+  // Optimize dependencies
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'react-router-dom', 'lucide-react']
   }
 })
 
