@@ -565,7 +565,7 @@ const MenuView = ({
 
         </div>
 
-      {/* Ürün Detay Modal - Admin panel stili */}
+      {/* Ürün Detay Modal - Framer stili */}
       {selectedItem && (
         <div 
           className="product-modal-overlay" 
@@ -577,77 +577,51 @@ const MenuView = ({
             className="product-modal-content" 
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="product-modal-header">
-              <div className="product-modal-title">
-                <div className="product-modal-icon">🍽️</div>
-                <div>
-                  <span className="product-modal-label">Ürün Detayı</span>
-                  <h3>{selectedItem.name}</h3>
-                </div>
-              </div>
-              <button 
-                className="product-modal-close"
-                onClick={() => {
-                  setSelectedItem(null)
-                }}
-                aria-label="Ürün detayını kapat"
-              >
-                <X size={20} />
-              </button>
-            </div>
-
-            <div className="product-modal-body">
-              <div className="product-modal-hero">
+            <div className="product-modal-inner">
+              {selectedItem.image && selectedItem.image.trim() !== '' ? (
                 <div className="product-modal-image">
-                  {selectedItem.image && selectedItem.image.trim() !== '' ? (
-                    <>
-                      <img 
-                        src={selectedItem.image} 
-                        alt={selectedItem.name}
-                        loading="lazy"
-                        onError={(e) => {
-                          if (e.target && e.target.nextSibling) {
-                            e.target.style.display = 'none'
-                            e.target.nextSibling.style.display = 'flex'
-                          }
-                        }}
-                      />
-                      <div className="product-modal-image-fallback" style={{ display: 'none' }}>
-                        🍽️
-                      </div>
-                    </>
-                  ) : (
-                    <div className="product-modal-image-fallback">🍽️</div>
-                  )}
-                </div>
-
-                <div className="product-modal-info">
-                  {selectedItem.category && (
-                    <span className="product-modal-category">{selectedItem.category}</span>
-                  )}
-                  <h2 className="product-modal-name">{selectedItem.name}</h2>
-                  {selectedItem.description && (
-                    <p className="product-modal-description">{selectedItem.description}</p>
-                  )}
-
-                  <div className="product-modal-price-card">
-                    <span>Fiyat</span>
-                    <strong>{selectedItem.price.toFixed(2)} ₺</strong>
+                  <img 
+                    src={selectedItem.image} 
+                    alt={selectedItem.name}
+                    loading="lazy"
+                    decoding="async"
+                    onError={(e) => {
+                      if (e.target && e.target.nextSibling) {
+                        e.target.style.display = 'none'
+                        e.target.nextSibling.style.display = 'flex'
+                      }
+                    }}
+                    onLoad={(e) => {
+                      if (e.target && e.target.nextSibling) {
+                        e.target.nextSibling.style.display = 'none'
+                      }
+                    }}
+                  />
+                  <div className="product-modal-image-fallback" style={{ display: 'none' }}>
+                    🍽️
                   </div>
                 </div>
-              </div>
-
-              <div className="product-modal-footer">
-                <button
-                  className="product-modal-close-btn"
-                  onClick={() => {
-                    setSelectedItem(null)
-                  }}
-                >
-                  Kapat
-                </button>
+              ) : (
+                <div className="product-modal-image">
+                  <div className="product-modal-image-fallback">🍽️</div>
+                </div>
+              )}
+              <h2 className="product-modal-title">{selectedItem.name}</h2>
+              {selectedItem.description && (
+                <p className="product-modal-description">{selectedItem.description}</p>
+              )}
+              <div className="product-modal-price">
+                {selectedItem.price.toFixed(2)}₺
               </div>
             </div>
+            <button
+              className="product-modal-close-btn"
+              onClick={() => {
+                setSelectedItem(null)
+              }}
+            >
+              Kapat
+            </button>
           </div>
         </div>
       )}
