@@ -847,11 +847,18 @@ function StaffApp({ variant = 'admin' }) {
       setShowMenuOnly(false)
       setIsOrderPanelVisible(false)
     }
+    // Menü sekmesine tıklanınca menüyü aç
+    if (tabId === 'menü') {
+      setSelectedTable(null)
+      setSelectedAccountId(null)
+      setShowMenuOnly(false)
+      setIsOrderPanelVisible(false)
+    }
     // Mobilde sekme değiştiğinde sidebar'ı kapat
     if (isMobile) {
       setIsSidebarOpen(false)
     }
-  }, [isMobile])
+  }, [isMobile, canAccessTab])
 
   const renderContent = () => {
     // Müşteri modu - giriş yapmadan menü sayfası

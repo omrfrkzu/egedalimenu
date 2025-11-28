@@ -195,3 +195,4 @@ Mobilde (`@media (max-width: 1024px)`) tüm animasyonlar minimize edildi:
 - Network ekran görüntülerini ekle
 - Production'da gerçek performans metriklerini izle
 
+
