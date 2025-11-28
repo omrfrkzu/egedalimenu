@@ -151,12 +151,13 @@ const MenuView = ({
     return categoryIndex.filter((category) => {
       const label = category.label || ''
       const isMezeCategory = label.toLocaleLowerCase('tr-TR') === 'mezeler'
-      if (isMezeCategory && !isAdmin) {
+      // Mezeler kategorisi sadece admin ve garson (müşteri olmayan) tarafından görülebilir
+      if (isMezeCategory && isCustomerMode) {
         return false
       }
       return true
     })
-  }, [categoryIndex, isAdmin])
+  }, [categoryIndex, isCustomerMode])
 
   const [activeCategory, setActiveCategory] = useState('')
   const [showTableSelector, setShowTableSelector] = useState(false)

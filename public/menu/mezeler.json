@@ -1,0 +1,283 @@
+[
+  {
+    "name": "İçli Köfte Adet",
+    "slug": "icli-kofte-adet",
+    "price": "100.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 1
+  },
+  {
+    "name": "Mücver Adet",
+    "slug": "mucver-adet",
+    "price": "95.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 2
+  },
+  {
+    "name": "Amerikan Salatası 250Gr.",
+    "slug": "amerikan-salatasi-250gr",
+    "price": "198.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 3
+  },
+  {
+    "name": "Bombay Pilaki 250Gr.",
+    "slug": "bombay-pilaki-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 4
+  },
+  {
+    "name": "Cevizli Sweet Chili Soslu Patlıcan 250Gr.",
+    "slug": "cevizli-sweet-chili-soslu-patlican-250gr",
+    "price": "290.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 5
+  },
+  {
+    "name": "Arnavut Ciğeri 250Gr.",
+    "slug": "arnavut-cigeri-250gr",
+    "price": "475.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 6
+  },
+  {
+    "name": "Girit Ezmesi 250Gr.",
+    "slug": "girit-ezmesi-250gr",
+    "price": "275.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 7
+  },
+  {
+    "name": "Humus 250Gr.",
+    "slug": "humus-250gr",
+    "price": "198.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 8
+  },
+  {
+    "name": "Abagannuş 250Gr.",
+    "slug": "abagannus-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 9
+  },
+  {
+    "name": "Fava 250Gr.",
+    "slug": "fava-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 10
+  },
+  {
+    "name": "Çerkez Tavuğu 250Gr.",
+    "slug": "cerkez-tavugu-250gr",
+    "price": "250.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 11
+  },
+  {
+    "name": "Hardallı Patates 250Gr.",
+    "slug": "hardalli-patates-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 12
+  },
+  {
+    "name": "Atom 250Gr.",
+    "slug": "atom-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 13
+  },
+  {
+    "name": "Haydari 250Gr.",
+    "slug": "haydari-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 14
+  },
+  {
+    "name": "İstiridye Mantar 250Gr.",
+    "slug": "istiridye-mantar-250gr",
+    "price": "275.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 15
+  },
+  {
+    "name": "Kısır 250Gr.",
+    "slug": "kisir-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 16
+  },
+  {
+    "name": "Soğan Dolması 250Gr.",
+    "slug": "sogan-dolmasi-250gr",
+    "price": "315.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 17
+  },
+  {
+    "name": "Mercimek Köftesi 250Gr.",
+    "slug": "mercimek-koftesi-250gr",
+    "price": "235.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 18
+  },
+  {
+    "name": "Nuraniye 250Gr.",
+    "slug": "nuraniye-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 19
+  },
+  {
+    "name": "Patlıcanlı Atom 250Gr.",
+    "slug": "patlicanli-atom-250gr",
+    "price": "275.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 20
+  },
+  {
+    "name": "Şakşuka 250Gr.",
+    "slug": "saksuka-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 21
+  },
+  {
+    "name": "Yoğurtlu Semizotu 250Gr.",
+    "slug": "yogurtlu-semizotu-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 22
+  },
+  {
+    "name": "Zeytinyağlı Fasulye 250Gr.",
+    "slug": "zeytinyagli-fasulye-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 23
+  },
+  {
+    "name": "Zeytinyağlı Ekşili Yaprak Sarması 250Gr.",
+    "slug": "zeytinyagli-eksili-yaprak-sarmasi-250gr",
+    "price": "219.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 24
+  },
+  {
+    "name": "Taze Baharatlı Yoğurt 250Gr.",
+    "slug": "taze-baharatli-yogurt-250gr",
+    "price": "275.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 25
+  },
+  {
+    "name": "Etli Yaprak Sarması 250Gr.",
+    "slug": "etli-yaprak-sarmasi-250gr",
+    "price": "350.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 26
+  },
+  {
+    "name": "Köpoğlu 250Gr.",
+    "slug": "kopoglu-250gr",
+    "price": "225.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 27
+  },
+  {
+    "name": "5 ÇEŞİT MEZE MENÜ",
+    "slug": "5-cesit-meze-menu",
+    "price": "425.00₺",
+    "description": "",
+    "image": "",
+    "category": "Mezeler",
+    "categoryCode": "mezeler",
+    "__generatedId": 28
+  }
+]
+
