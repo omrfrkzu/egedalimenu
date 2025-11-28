@@ -150,12 +150,22 @@ const MenuView = ({
 
     return categoryIndex.filter((category) => {
       const label = category.label || ''
+      const categoryId = category.id || ''
       const isMezeCategory = label.toLocaleLowerCase('tr-TR') === 'mezeler'
+      const isFavorilerCategory = categoryId === 'favoriler' || label.toLocaleLowerCase('tr-TR') === 'favoriler'
+      
       // Mezeler kategorisi sadece admin ve garson (müşteri olmayan) tarafından görülebilir
       // isCustomerMode true ise mezeleri gizle, false ise (admin/garson) göster
       if (isMezeCategory) {
         return !isCustomerMode
       }
+      
+      // Favoriler kategorisi sadece müşteri modunda görülebilir
+      // isCustomerMode false ise (admin/garson) favorileri gizle
+      if (isFavorilerCategory) {
+        return isCustomerMode
+      }
+      
       return true
     })
   }, [categoryIndex, isCustomerMode])
@@ -443,7 +453,10 @@ const MenuView = ({
             <p>Menü yükleniyor...</p>
           </div>
         )}
-        {categoryItems[activeCategory]?.map((item) => {
+        {categoryItems[activeCategory]?.slice().sort((a, b) => {
+          // Türkçe karakterleri doğru sıralamak için localeCompare kullan
+          return a.name.localeCompare(b.name, 'tr-TR', { sensitivity: 'base' })
+        }).map((item) => {
           const isMezeActiveCategory = activeCategory === 'mezeler'
           // Mezeler kategorisinde açıklama ve detay kapalı olacak
           const hasDescription = Boolean(item.description) && !isMezeActiveCategory
@@ -457,39 +470,41 @@ const MenuView = ({
               }
             }}
             >
-            <div className="menu-item-image">
-              {item.image && item.image.trim() !== '' ? (
-                <>
-                  <img 
-                    src={item.image} 
-                    alt={item.name}
-                    loading="lazy"
-                    decoding="async"
-                    onError={(e) => {
-                      if (e.target && e.target.nextSibling) {
-                        e.target.style.display = 'none'
-                        e.target.nextSibling.style.display = 'flex'
-                      }
-                    }}
-                    onLoad={(e) => {
-                      if (e.target && e.target.nextSibling) {
-                        e.target.nextSibling.style.display = 'none'
-                      }
-                    }}
-                  />
-                  <div className="menu-item-image-fallback" style={{ display: 'none' }}>
-                    🍽️
+            {!isMezeActiveCategory && (
+              <div className="menu-item-image">
+                {item.image && item.image.trim() !== '' ? (
+                  <>
+                    <img 
+                      src={item.image} 
+                      alt={item.name}
+                      loading="lazy"
+                      decoding="async"
+                      onError={(e) => {
+                        if (e.target && e.target.nextSibling) {
+                          e.target.style.display = 'none'
+                          e.target.nextSibling.style.display = 'flex'
+                        }
+                      }}
+                      onLoad={(e) => {
+                        if (e.target && e.target.nextSibling) {
+                          e.target.nextSibling.style.display = 'none'
+                        }
+                      }}
+                    />
+                    <div className="menu-item-image-fallback" style={{ display: 'none' }}>
+                      🍽️
+                    </div>
+                  </>
+                ) : (
+                  <div className="menu-item-image-fallback">🍽️</div>
+                )}
+                {hasDescription && (
+                  <div className="menu-item-info-icon">
+                    <Info size={20} />
                   </div>
-                </>
-              ) : (
-                <div className="menu-item-image-fallback">🍽️</div>
-              )}
-              {hasDescription && (
-                <div className="menu-item-info-icon">
-                  <Info size={20} />
-                </div>
-              )}
-            </div>
+                )}
+              </div>
+            )}
             <div className="menu-item-info">
               <h3 className="menu-item-name">{item.name}</h3>
               {!isMezeActiveCategory && (
