@@ -883,7 +883,7 @@ function StaffApp({ variant = 'admin' }) {
     // Giriş yapmış kullanıcılar için normal akış
     switch (activeTab) {
       case 'menü':
-        return <MenuView onAddItem={handleAddItem} isAdmin={currentUser?.role === 'admin'} />
+        return <MenuView onAddItem={handleAddItem} isAdmin={currentUser?.role === 'admin'} isCustomerMode={false} />
       case 'siparişler':
         return (
           <Suspense fallback={<LoadingFallback />}>
@@ -934,6 +934,7 @@ function StaffApp({ variant = 'admin' }) {
                     onCreateTable={handleMenuAction}
                     actionLabel={tableCreatedMap[selectedTable] ? 'Ödeme Al' : 'Siparişi Oluştur'}
                     isAdmin={currentUser?.role === 'admin'}
+                    isCustomerMode={false}
                   />
                 ) : (
                   <div className="menu-panel-empty">

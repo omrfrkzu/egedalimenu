@@ -152,8 +152,9 @@ const MenuView = ({
       const label = category.label || ''
       const isMezeCategory = label.toLocaleLowerCase('tr-TR') === 'mezeler'
       // Mezeler kategorisi sadece admin ve garson (müşteri olmayan) tarafından görülebilir
-      if (isMezeCategory && isCustomerMode) {
-        return false
+      // isCustomerMode true ise mezeleri gizle, false ise (admin/garson) göster
+      if (isMezeCategory) {
+        return !isCustomerMode
       }
       return true
     })
