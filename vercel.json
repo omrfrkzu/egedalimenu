@@ -5,6 +5,33 @@
       "destination": "/index.html"
     }
   ],
+  "redirects": [
+    {
+      "source": "/en/bakım-sayfası",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/bak%C4%B1m-sayfas%C4%B1",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bakım-sayfası",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bak%C4%B1m-sayfas%C4%B1",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/maintenance",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",
