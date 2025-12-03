@@ -336,7 +336,7 @@ const MenuView = ({
 
   if (loading) {
     return (
-      <div className="menu-view">
+      <div className="menu-view" style={{ background: 'white', padding: '24px', minHeight: '100%' }}>
         <div className="menu-header">
           <h2>Menü</h2>
         </div>
@@ -349,7 +349,7 @@ const MenuView = ({
 
   if (menuError) {
     return (
-      <div className="menu-view">
+      <div className="menu-view" style={{ background: 'white', padding: '24px', minHeight: '100%' }}>
         <div className="menu-header">
           <h2>Menü</h2>
         </div>

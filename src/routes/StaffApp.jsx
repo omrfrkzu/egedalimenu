@@ -887,11 +887,7 @@ function StaffApp({ variant = 'admin' }) {
       case 'siparişler':
         return (
           <Suspense fallback={<LoadingFallback />}>
-            <OrdersView 
-              pendingOrders={pendingOrders} 
-              preparedOrders={preparedOrders}
-              onMarkPrepared={handleMarkOrderPrepared}
-            />
+            <OrdersView />
           </Suspense>
         )
       case 'masalar':

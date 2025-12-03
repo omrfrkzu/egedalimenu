@@ -3,6 +3,7 @@ import { CheckCircle } from 'lucide-react'
 import Header from '../components/Header'
 import MenuView from '../components/MenuView'
 import { useLocalStorageDebounce } from '../hooks/useLocalStorageDebounce'
+import { createOrder } from '../utils/api'
 import '../App.css'
 
 const CUSTOMER_ACCOUNT_ID = 'customer'
@@ -178,7 +179,7 @@ const CustomerApp = () => {
     })
   }, [])
 
-  const handleCustomerCompleteOrder = useCallback((tableId, note = '') => {
+  const handleCustomerCompleteOrder = useCallback(async (tableId, note = '') => {
     const tableData = getTableData(tableId)
     const customerAccount = tableData?.accounts?.[CUSTOMER_ACCOUNT_ID]
     const tableOrders = customerAccount?.items || []
@@ -189,6 +190,15 @@ const CustomerApp = () => {
       0
     )
 
+    // Create order in API (real-time update for admin)
+    try {
+      await createOrder(tableId, tableOrders, note.trim() || '')
+    } catch (error) {
+      console.error('Failed to create order in API:', error)
+      // Continue with local storage fallback
+    }
+
+    // Keep local storage for backward compatibility
     setPendingOrders(prev => ({
       ...prev,
       [tableId]: {
