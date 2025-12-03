@@ -431,9 +431,9 @@ const MenuView = ({
   }, [currentTableOrders])
 
   // Eğer kategoriler yüklenmediyse loading göster
-  if (visibleCategories.length === 0 && !loading) {
+  if (visibleCategories.length === 0 && !loading && !menuError) {
     return (
-      <div className="menu-view">
+      <div className="menu-view" style={{ background: 'white', padding: '24px' }}>
         <div className="menu-header">
           <h2>Menü</h2>
         </div>
@@ -445,12 +445,12 @@ const MenuView = ({
   }
 
   return (
-    <div className="menu-view">
+    <div className="menu-view" style={{ background: 'white', minHeight: '100%' }}>
       <div className="menu-content-wrapper">
         {/* Sol Kategori Sidebar */}
-        {visibleCategories.length > 0 && (
-          <div className="menu-category-sidebar">
-            {visibleCategories.map((category) => {
+        <div className="menu-category-sidebar">
+          {visibleCategories.length > 0 ? (
+            visibleCategories.map((category) => {
               const Icon = getCategoryIcon(category.id)
               return (
                 <button
@@ -462,9 +462,13 @@ const MenuView = ({
                   <span>{category.label}</span>
                 </button>
               )
-            })}
-          </div>
-        )}
+            })
+          ) : (
+            <div style={{ padding: '20px', textAlign: 'center', color: '#64748b' }}>
+              <p>Kategoriler yükleniyor...</p>
+            </div>
+          )}
+        </div>
 
         <div className="menu-content">
           <div className="menu-header">
