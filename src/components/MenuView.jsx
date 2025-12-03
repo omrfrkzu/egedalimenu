@@ -211,10 +211,16 @@ const MenuView = ({
 
   // Kategori değiştiğinde ilk kategoriyi ayarla
   useEffect(() => {
-    if (visibleCategories.length === 0) return
+    if (visibleCategories.length === 0) {
+      // Kategoriler henüz yüklenmedi, bekle
+      return
+    }
     const isActiveVisible = visibleCategories.some(category => category.id === activeCategory)
     if (!activeCategory || !isActiveVisible) {
-      setActiveCategory(visibleCategories[0]?.id || '')
+      const firstCategoryId = visibleCategories[0]?.id || ''
+      if (firstCategoryId) {
+        setActiveCategory(firstCategoryId)
+      }
     }
   }, [visibleCategories, activeCategory])
 
@@ -317,6 +323,17 @@ const MenuView = ({
     setSelectedItem(item)
   }, [])
 
+  // Debug: Console'a bilgi yazdır
+  useEffect(() => {
+    console.log('MenuView Render:', {
+      loading,
+      menuError,
+      visibleCategories: visibleCategories.length,
+      activeCategory,
+      categoryItems: Object.keys(categoryItems).length
+    })
+  }, [loading, menuError, visibleCategories.length, activeCategory, categoryItems])
+
   if (loading) {
     return (
       <div className="menu-view">
@@ -413,25 +430,41 @@ const MenuView = ({
     return currentTableOrders.reduce((sum, item) => sum + item.quantity, 0)
   }, [currentTableOrders])
 
+  // Eğer kategoriler yüklenmediyse loading göster
+  if (visibleCategories.length === 0 && !loading) {
+    return (
+      <div className="menu-view">
+        <div className="menu-header">
+          <h2>Menü</h2>
+        </div>
+        <div style={{ textAlign: 'center', padding: '40px' }}>
+          <p>Kategoriler yükleniyor...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div className="menu-view">
       <div className="menu-content-wrapper">
         {/* Sol Kategori Sidebar */}
-        <div className="menu-category-sidebar">
-          {visibleCategories.map((category) => {
-            const Icon = getCategoryIcon(category.id)
-            return (
-              <button
-                key={category.id}
-                className={`category-sidebar-item ${activeCategory === category.id ? 'active' : ''}`}
-                onClick={() => setActiveCategory(category.id)}
-              >
-                <Icon size={20} />
-                <span>{category.label}</span>
-              </button>
-            )
-          })}
-        </div>
+        {visibleCategories.length > 0 && (
+          <div className="menu-category-sidebar">
+            {visibleCategories.map((category) => {
+              const Icon = getCategoryIcon(category.id)
+              return (
+                <button
+                  key={category.id}
+                  className={`category-sidebar-item ${activeCategory === category.id ? 'active' : ''}`}
+                  onClick={() => setActiveCategory(category.id)}
+                >
+                  <Icon size={20} />
+                  <span>{category.label}</span>
+                </button>
+              )
+            })}
+          </div>
+        )}
 
         <div className="menu-content">
           <div className="menu-header">
