@@ -544,7 +544,6 @@ const MenuView = ({
             )}
           </div>
         )}
-      </div>
 
       {isCustomerMode && !selectedTable && (
         <div className="customer-table-prompt">
@@ -688,7 +687,6 @@ const MenuView = ({
         </div>
       )}
 
-        </div>
         </div>
 
         {/* Sağ Sipariş Özeti Sidebar */}
