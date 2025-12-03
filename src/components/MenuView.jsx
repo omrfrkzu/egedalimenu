@@ -25,7 +25,9 @@ const MenuView = ({
   onCompleteOrder,
   occupiedTables = {},
   onUpdateQuantity,
-  isAdmin = false
+  isAdmin = false,
+  orderNote = '',
+  setOrderNote
 }) => {
   const [categoryIndex, setCategoryIndex] = useState([])
   const [categoryItems, setCategoryItems] = useState({})
@@ -33,9 +35,13 @@ const MenuView = ({
   const [loadingCategoryId, setLoadingCategoryId] = useState('')
   const [menuError, setMenuError] = useState('')
   const [selectedItem, setSelectedItem] = useState(null)
-  const [orderNote, setOrderNote] = useState('')
   const [activeFloor, setActiveFloor] = useState(null)
   const [addedItems, setAddedItems] = useState(new Set())
+  
+  // orderNote için local state (eğer prop gelmezse)
+  const [localOrderNote, setLocalOrderNote] = useState('')
+  const effectiveOrderNote = orderNote !== undefined ? orderNote : localOrderNote
+  const effectiveSetOrderNote = setOrderNote || setLocalOrderNote
   
   // Masalar listesi
   const tables = [
@@ -217,12 +223,12 @@ const MenuView = ({
     if (isCustomerMode && selectedTable) {
       const tableOrders = orders[selectedTable] || []
       if (tableOrders.length === 0) {
-        setOrderNote('')
+        effectiveSetOrderNote('')
       }
     } else if (!selectedTable) {
-      setOrderNote('')
+      effectiveSetOrderNote('')
     }
-  }, [isCustomerMode, selectedTable, orders])
+  }, [isCustomerMode, selectedTable, orders, effectiveSetOrderNote])
 
   // Modal açıldığında scroll'u en üste al
   useEffect(() => {
@@ -769,7 +775,7 @@ const MenuView = ({
                 </button>
                 <button 
                   className="payments-btn"
-                  onClick={() => onCompleteOrder && onCompleteOrder(selectedTable, orderNote)}
+                  onClick={() => onCompleteOrder && onCompleteOrder(selectedTable, effectiveOrderNote)}
                   disabled={currentTableOrders.length === 0}
                 >
                   <CreditCard size={18} />
