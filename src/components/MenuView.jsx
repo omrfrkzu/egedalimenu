@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useCallback, memo } from 'react'
-import { Plus, Check, X, Minus, Info } from 'lucide-react'
+import { Plus, Check, X, Minus, Info, Coffee, GlassWater, UtensilsCrossed, Cookie, Table as TableIcon, Printer, CreditCard } from 'lucide-react'
 import './MenuView.css'
 
 // Ürün adını formatla: Tüm harfler büyük
@@ -172,6 +172,36 @@ const MenuView = ({
 
   const [activeCategory, setActiveCategory] = useState('')
   const [showTableSelector, setShowTableSelector] = useState(false)
+  const [selectedFilter, setSelectedFilter] = useState('all')
+  const [productQuantities, setProductQuantities] = useState({})
+  
+  // Kategori ikonları
+  const getCategoryIcon = (categoryId) => {
+    const iconMap = {
+      'favoriler': Coffee,
+      'kahvaltı-tabakları': UtensilsCrossed,
+      'mezeler': Cookie,
+      'sandviçler': UtensilsCrossed,
+      'sıcak-lezzetler': UtensilsCrossed,
+      'yumurta-çeşitleri': UtensilsCrossed,
+    }
+    return iconMap[categoryId] || Coffee
+  }
+  
+  // Seçili masanın siparişlerini al
+  const currentTableOrders = useMemo(() => {
+    if (!selectedTable || !orders[selectedTable]) return []
+    return orders[selectedTable] || []
+  }, [selectedTable, orders])
+  
+  // Ürün miktarlarını güncelle
+  useEffect(() => {
+    const quantities = {}
+    currentTableOrders.forEach(item => {
+      quantities[item.id] = item.quantity || 0
+    })
+    setProductQuantities(quantities)
+  }, [currentTableOrders])
 
   // Kategori değiştiğinde ilk kategoriyi ayarla
   useEffect(() => {
@@ -307,9 +337,96 @@ const MenuView = ({
     )
   }
 
+  // Filtreleme için ürün isimlerini al
+  const productFilters = useMemo(() => {
+    if (!categoryItems[activeCategory]) return []
+    const items = categoryItems[activeCategory]
+    const filters = ['all']
+    items.forEach(item => {
+      const name = item.name.toLowerCase()
+      if (name.includes('ice') || name.includes('iced')) {
+        if (!filters.includes('ice coffee')) filters.push('ice coffee')
+      }
+      if (name.includes('american')) {
+        if (!filters.includes('american')) filters.push('american')
+      }
+      if (name.includes('café') || name.includes('cafe')) {
+        if (!filters.includes('café noir')) filters.push('café noir')
+      }
+      if (name.includes('brewed')) {
+        if (!filters.includes('brewed coffee')) filters.push('brewed coffee')
+      }
+      if (name.includes('flavored')) {
+        if (!filters.includes('flavored coffee')) filters.push('flavored coffee')
+      }
+    })
+    return filters
+  }, [categoryItems, activeCategory])
+
+  // Filtrelenmiş ürünler
+  const filteredItems = useMemo(() => {
+    if (!categoryItems[activeCategory]) return []
+    let items = categoryItems[activeCategory].slice().sort((a, b) => {
+      return a.name.localeCompare(b.name, 'tr-TR', { sensitivity: 'base' })
+    })
+    
+    if (selectedFilter !== 'all') {
+      items = items.filter(item => {
+        const name = item.name.toLowerCase()
+        if (selectedFilter === 'ice coffee') {
+          return name.includes('ice') || name.includes('iced')
+        }
+        if (selectedFilter === 'american') {
+          return name.includes('american')
+        }
+        if (selectedFilter === 'café noir') {
+          return name.includes('café') || name.includes('cafe')
+        }
+        if (selectedFilter === 'brewed coffee') {
+          return name.includes('brewed')
+        }
+        if (selectedFilter === 'flavored coffee') {
+          return name.includes('flavored')
+        }
+        return true
+      })
+    }
+    return items
+  }, [categoryItems, activeCategory, selectedFilter])
+
+  // Toplam hesapla
+  const orderTotal = useMemo(() => {
+    return currentTableOrders.reduce((sum, item) => sum + item.price * item.quantity, 0)
+  }, [currentTableOrders])
+
+  const orderItemCount = useMemo(() => {
+    return currentTableOrders.length
+  }, [currentTableOrders])
+
+  const orderQuantityTotal = useMemo(() => {
+    return currentTableOrders.reduce((sum, item) => sum + item.quantity, 0)
+  }, [currentTableOrders])
+
   return (
     <div className="menu-view">
       <div className="menu-content-wrapper">
+        {/* Sol Kategori Sidebar */}
+        <div className="menu-category-sidebar">
+          {visibleCategories.map((category) => {
+            const Icon = getCategoryIcon(category.id)
+            return (
+              <button
+                key={category.id}
+                className={`category-sidebar-item ${activeCategory === category.id ? 'active' : ''}`}
+                onClick={() => setActiveCategory(category.id)}
+              >
+                <Icon size={20} />
+                <span>{category.label}</span>
+              </button>
+            )
+          })}
+        </div>
+
         <div className="menu-content">
           <div className="menu-header">
         <h2>Menü</h2>
@@ -435,17 +552,20 @@ const MenuView = ({
         </div>
       )}
 
-      <div className="categories-scroll">
-        {visibleCategories.map((category) => (
-          <button
-            key={category.id}
-            className={`category-tab ${activeCategory === category.id ? 'active' : ''}`}
-            onClick={() => setActiveCategory(category.id)}
-          >
-            {category.label}
-          </button>
-        ))}
-      </div>
+      {/* Ürün Filtre Butonları */}
+      {productFilters.length > 1 && (
+        <div className="product-filters">
+          {productFilters.map((filter) => (
+            <button
+              key={filter}
+              className={`product-filter-btn ${selectedFilter === filter ? 'active' : ''}`}
+              onClick={() => setSelectedFilter(filter)}
+            >
+              {filter === 'all' ? 'Tümü' : filter}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="menu-items-grid">
         {loadingCategoryId === activeCategory && !categoryItems[activeCategory] && (
@@ -453,10 +573,7 @@ const MenuView = ({
             <p>Menü yükleniyor...</p>
           </div>
         )}
-        {categoryItems[activeCategory]?.slice().sort((a, b) => {
-          // Türkçe karakterleri doğru sıralamak için localeCompare kullan
-          return a.name.localeCompare(b.name, 'tr-TR', { sensitivity: 'base' })
-        }).map((item) => {
+        {filteredItems.map((item) => {
           const isMezeActiveCategory = activeCategory === 'mezeler'
           // Mezeler kategorisinde açıklama ve detay kapalı olacak
           const hasDescription = Boolean(item.description) && !isMezeActiveCategory
@@ -508,44 +625,52 @@ const MenuView = ({
             <div className="menu-item-info">
               <h3 className="menu-item-name">{item.name}</h3>
               {!isMezeActiveCategory && (
-                <p className="menu-item-price">{item.price.toFixed(2)} ₺</p>
+                <p className="menu-item-price">${item.price.toFixed(2)}</p>
               )}
             </div>
             {(!isCustomerMode || (isCustomerMode && selectedTable)) && (
-              <button
-                className={`menu-item-add-btn ${addedItems.has(item.id) ? 'added' : ''}`}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  if (isCustomerMode && !selectedTable) {
-                    alert('Lütfen önce bir masa seçin!')
-                    return
-                  }
-                  onAddItem(item)
-                  // Tik işareti göster
-                  setAddedItems(prev => new Set(prev).add(item.id))
-                  // 2 saniye sonra tik işaretini kaldır
-                  setTimeout(() => {
-                    setAddedItems(prev => {
-                      const newSet = new Set(prev)
-                      newSet.delete(item.id)
-                      return newSet
-                    })
-                  }, 2000)
-                }}
-                disabled={isCustomerMode && !selectedTable}
-              >
-                {addedItems.has(item.id) ? (
-                  <>
-                    <Check size={18} />
-                    Eklendi
-                  </>
-                ) : (
-                  <>
-                    <Plus size={18} />
-                    Ekle
-                  </>
-                )}
-              </button>
+              <div className="menu-item-quantity-controls">
+                <button
+                  className="quantity-btn minus"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    if (isCustomerMode && !selectedTable) {
+                      alert('Lütfen önce bir masa seçin!')
+                      return
+                    }
+                    const currentQty = productQuantities[item.id] || 0
+                    if (currentQty > 0 && onUpdateQuantity && selectedTable) {
+                      onUpdateQuantity(selectedTable, item.id, -1)
+                    }
+                  }}
+                  disabled={isCustomerMode && (!selectedTable || (productQuantities[item.id] || 0) === 0)}
+                >
+                  <Minus size={16} />
+                </button>
+                <input
+                  type="number"
+                  className="quantity-input"
+                  value={productQuantities[item.id] || 0}
+                  readOnly
+                  min="0"
+                />
+                <button
+                  className="quantity-btn plus"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    if (isCustomerMode && !selectedTable) {
+                      alert('Lütfen önce bir masa seçin!')
+                      return
+                    }
+                    if (onAddItem) {
+                      onAddItem(item)
+                    }
+                  }}
+                  disabled={isCustomerMode && !selectedTable}
+                >
+                  <Plus size={16} />
+                </button>
+              </div>
             )}
           </div>
           )
@@ -564,6 +689,99 @@ const MenuView = ({
       )}
 
         </div>
+        </div>
+
+        {/* Sağ Sipariş Özeti Sidebar */}
+        {isCustomerMode && selectedTable && (
+          <div className="menu-order-sidebar">
+            <div className="order-sidebar-header">
+              <div className="invoice-info">
+                <p className="invoice-number">Invoice No: 123454 23/01/2024 | 14:00:23</p>
+                <div className="invoice-company">
+                  <span className="company-logo">Ep</span>
+                  <div>
+                    <p className="company-name">Easy POS</p>
+                    <p className="company-email">easypos@gmail.com</p>
+                  </div>
+                </div>
+                <p className="table-info">Table {tables.find(t => t.id === selectedTable)?.number || selectedTable}</p>
+                <p className="order-info">Order: #{String(selectedTable).padStart(4, '0')}</p>
+              </div>
+            </div>
+            <div className="order-sidebar-content">
+              {currentTableOrders.length === 0 ? (
+                <div className="empty-order-message">
+                  <p>Henüz ürün eklenmedi</p>
+                </div>
+              ) : (
+                <div className="order-items-list">
+                  {currentTableOrders.map((orderItem) => (
+                    <div key={orderItem.id} className="order-sidebar-item">
+                      <div className="order-item-image-small">
+                        {orderItem.image && orderItem.image.trim() !== '' ? (
+                          <img src={orderItem.image} alt={orderItem.name} />
+                        ) : (
+                          <div className="order-item-image-fallback-small">🍽️</div>
+                        )}
+                      </div>
+                      <div className="order-item-details">
+                        <h4 className="order-item-name">{orderItem.name}</h4>
+                        <p className="order-item-unit-price">${orderItem.price.toFixed(2)}</p>
+                        <p className="order-item-size">Size: large</p>
+                        <p className="order-item-total">${(orderItem.price * orderItem.quantity).toFixed(2)}</p>
+                      </div>
+                      <div className="order-item-actions">
+                        <div className="order-quantity-controls">
+                          <button
+                            className="order-quantity-btn"
+                            onClick={() => onUpdateQuantity && onUpdateQuantity(selectedTable, orderItem.id, -1)}
+                          >
+                            <Minus size={14} />
+                          </button>
+                          <span className="order-quantity">{orderItem.quantity}</span>
+                          <button
+                            className="order-quantity-btn"
+                            onClick={() => onUpdateQuantity && onUpdateQuantity(selectedTable, orderItem.id, 1)}
+                          >
+                            <Plus size={14} />
+                          </button>
+                        </div>
+                        <button
+                          className="order-remove-btn"
+                          onClick={() => onUpdateQuantity && onUpdateQuantity(selectedTable, orderItem.id, -orderItem.quantity)}
+                        >
+                          <X size={16} />
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+            <div className="order-sidebar-footer">
+              <div className="order-total-section">
+                <p className="order-total-label">Total</p>
+                <p className="order-total-items">Items: {orderItemCount}, Quantity: {orderQuantityTotal}</p>
+                <p className="order-total-amount">${orderTotal.toFixed(2)}</p>
+              </div>
+              <div className="order-action-buttons">
+                <button className="print-invoice-btn">
+                  <Printer size={18} />
+                  Print Invoice
+                </button>
+                <button 
+                  className="payments-btn"
+                  onClick={() => onCompleteOrder && onCompleteOrder(selectedTable, orderNote)}
+                  disabled={currentTableOrders.length === 0}
+                >
+                  <CreditCard size={18} />
+                  Payments
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
 
       {/* Ürün Detay Modal - Framer stili */}
       {selectedItem && (
