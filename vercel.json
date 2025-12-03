@@ -30,6 +30,11 @@
       "source": "/maintenance",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/en/maintenance",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "headers": [
