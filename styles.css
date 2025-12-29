@@ -1,0 +1,328 @@
+/* Custom Scrollbar Hide */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Filter Buttons Container - Better Mobile Support */
+.filter-btn {
+    min-width: fit-content;
+}
+
+@media (max-width: 640px) {
+    .filter-btn {
+        font-size: 0.75rem;
+        flex: 1 1 auto;
+        min-width: calc(50% - 0.25rem);
+    }
+}
+
+/* Line Clamp Utility */
+.line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Capitalize Each Word */
+.capitalize-words {
+    text-transform: capitalize;
+}
+
+/* Filter Button Active State */
+.filter-btn {
+    background-color: white;
+    color: #6b7280;
+    border-color: #e5e7eb;
+}
+
+.filter-btn:hover {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+    color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white !important;
+    border-color: #10b981;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active svg {
+    color: white !important;
+    stroke: white !important;
+}
+
+.filter-btn svg {
+    transition: all 0.2s ease;
+}
+
+/* Mobile Filter Button Styles */
+.filter-btn-mobile {
+    background-color: white;
+    color: #4b5563;
+    border-color: #d1d5db;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn-mobile::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(5, 150, 105, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.filter-btn-mobile:hover::before {
+    opacity: 1;
+}
+
+.filter-btn-mobile:hover {
+    border-color: #10b981;
+    color: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 12px -2px rgba(16, 185, 129, 0.15);
+}
+
+.filter-btn-mobile.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white !important;
+    border-color: #10b981;
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+    transform: translateY(-1px) scale(1.02);
+}
+
+.filter-btn-mobile.active::before {
+    opacity: 0;
+}
+
+.filter-btn-mobile.active svg {
+    color: white !important;
+    stroke: white !important;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.filter-btn-mobile svg {
+    transition: all 0.2s ease;
+}
+
+/* Smooth Transitions */
+* {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Card Hover Effects */
+.group:hover .group-hover\:scale-110 {
+    transform: scale(1.1);
+}
+
+/* Backdrop Blur Support */
+.backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+/* Cart Modal Animation */
+#cartModal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#cartModal > div {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Accordion Styles */
+.accordion-header {
+    cursor: pointer;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-icon.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 500px;
+    }
+}
+
+/* Admin Panel Animations */
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Admin Panel Styles */
+.admin-filter-btn {
+    background-color: white;
+    color: #6b7280;
+    border-color: #e5e7eb;
+}
+
+.admin-filter-btn:hover {
+    border-color: #10b981;
+    background-color: #f0fdf4;
+    color: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.1);
+}
+
+.admin-filter-btn.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: white !important;
+    border-color: #10b981;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+}
+
+.admin-filter-btn.active svg {
+    color: white !important;
+    stroke: white !important;
+}
+
+.admin-filter-btn svg {
+    transition: all 0.2s ease;
+}
+
+/* Table Accordion Styles */
+.table-accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+.table-accordion-icon.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.table-accordion-content {
+    transition: all 0.3s ease;
+}
+
+/* Product Description Toggle */
+.description-content {
+    animation: slideDown 0.3s ease-out;
+    overflow: hidden;
+}
+
+.description-icon {
+    transition: transform 0.3s ease;
+}
+
+.description-icon.rotate-180 {
+    transform: rotate(180deg);
+}
+
+.description-toggle:hover {
+    color: #22c55e;
+}
+
+/* POS System Styles */
+.order-type-btn {
+    transition: all 0.2s ease;
+}
+
+.category-btn {
+    transition: all 0.2s ease;
+}
+
+.category-btn.active {
+    background-color: #10b981;
+    color: white;
+}
+
+.order-tab {
+    transition: all 0.2s ease;
+}
+
+.order-tab.active {
+    background-color: white;
+    border-bottom: 2px solid #f97316;
+    color: #f97316;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 640px) {
+    /* Ensure proper touch targets */
+    button, .category-btn, .order-type-btn {
+        min-height: 44px;
+    }
+    
+    /* Better spacing on mobile */
+    .grid {
+        gap: 0.5rem;
+    }
+}
+
+/* Tablet and up */
+@media (min-width: 641px) and (max-width: 1023px) {
+    /* Tablet specific styles */
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    /* Desktop specific styles */
+}
+
