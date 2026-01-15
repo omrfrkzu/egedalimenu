@@ -1,0 +1,580 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "PESTO - FÜME",
+      "category": "favoriler",
+      "description": "Yumuşak beyaz peynir, yeşil pesto sos, antrikot füme",
+      "price": 215.00,
+      "image": "Sandviçler/et-fume-pesto-sandviç.jpg"
+    },
+    {
+      "id": 2,
+      "name": "EGE SERPMESİ",
+      "category": "favoriler",
+      "description": "Ege bölgesine özgü zeytin, peynir, domates ve taze otlarla hazırlanmış serpme tabak",
+      "price": 209.00,
+      "image": "Kahvaltı Tabakları/ege-sabahı.jpg"
+    },
+    {
+      "id": 110,
+      "name": "Balkan Sandviç",
+      "category": "favoriler",
+      "description": "Taze süt kaşar peyniri, balkan salam, boşnak kuru et, amerikan salatası, çeri domates, roka",
+      "price": 425.00,
+      "image": "Sandviçler/balkan-sandviç.jpg"
+    },
+    {
+      "id": 63,
+      "name": "Güne Merhaba",
+      "category": "favoriler",
+      "description": "İspanyol salam, taze süt kaşarı, zeytin, tereyağı, bal, reçel, haşlanmış yumurta, zeytinyağı, domates, salatalık, roka",
+      "price": 390.00,
+      "image": "Kahvaltı Tabakları/güne-merhaba.jpg"
+    },
+    {
+      "id": 304,
+      "name": "Serpme Kahvaltı",
+      "category": "favoriler",
+      "description": "Beyaz Peynir, Kaşar Ve Tulum Peyniri, Salam, Dana Füme, Kekikli Sucuk, Siyah Ve Yeşil Zeytin, Sahanda Yumurta Veya Menemen, Simit, Tam Buğday Ekmeği, Bal, Kaymak Ve Reçel Çeşitleri, Domates, Salatalık, Yeşillikler, Paçanga Ve Ispanaklı Sigara Böreği, Sınırsız Çay",
+      "price": 2200.00,
+      "image": "Sıcak Lezzetler/serpme-kahvaltı.jpg"
+    },
+    {
+      "id": 59,
+      "name": "Yöresel Kahvaltı",
+      "category": "kahvalti",
+      "description": "Yaban mersinli tulum, trakya eski kaşar, dil peyniri, taze süt kaşarı, haşlanmış yumurta, balkan salam, pastırma, hindi füme",
+      "price": 625.00,
+      "image": "Kahvaltı Tabakları/yoresel-kahvaltı.jpg"
+    },
+    {
+      "id": 60,
+      "name": "Gurme Kahvaltı",
+      "category": "kahvalti",
+      "description": "Dil peyniri, taze süt kaşarı, beyaz peynir, tereyağ, haşlanmış yumurta, pastırma, balkan salamı, hindi füme, dana kavurma, special tulum peyniri, acıbiber reçeli, mix zeytin",
+      "price": 580.00,
+      "image": "Kahvaltı Tabakları/gurme-kahvaltı.jpg"
+    },
+    {
+      "id": 61,
+      "name": "Anadolu Esintisi",
+      "category": "kahvalti",
+      "description": "Humus, beyaz peynir, yayık tereyağı, çilek reçeli, domates, salatalık, mix zeytin",
+      "price": 350.00,
+      "image": "Kahvaltı Tabakları/anadolu-esintisi.jpg"
+    },
+    {
+      "id": 62,
+      "name": "Ege Sabahı",
+      "category": "kahvalti",
+      "description": "Lor, zeytinyağ, reçel, mix zeytin, acuka, simit, bal kaymak, beyaz peynir, domates, salatalık",
+      "price": 445.00,
+      "image": "Kahvaltı Tabakları/ege-sabahı.jpg"
+    },
+    {
+      "id": 64,
+      "name": "Sabah Sofrası",
+      "category": "kahvalti",
+      "description": "Dil peyniri, lor peyniri, beyaz peynir, dana kavurma, tereyağı, bal, acı biber reçeli, acuka, ajvar, mix zeytin, domates, salatalık",
+      "price": 490.00,
+      "image": "Kahvaltı Tabakları/sabah-sofrası.jpg"
+    },
+    {
+      "id": 65,
+      "name": "Peynir & Füme Keyfi",
+      "category": "kahvalti",
+      "description": "Eski kaşar, taze süt kaşarı, beyaz peynir, isli peynir, ispanyol salam, kekikli sucuk, hindi füme, pastırma",
+      "price": 790.00,
+      "image": "Kahvaltı Tabakları/peynir ve fume keyfi.jpg"
+    },
+    {
+      "id": 66,
+      "name": "Güne Merhaba",
+      "category": "kahvalti",
+      "description": "İspanyol salam, taze süt kaşarı, zeytin, tereyağı, bal, reçel, haşlanmış yumurta, zeytinyağı, domates, salatalık, roka",
+      "price": 390.00,
+      "image": "Kahvaltı Tabakları/güne-merhaba.jpg"
+    },
+    {
+      "id": 309,
+      "name": "Altınoluk Kahvaltısı",
+      "category": "kahvalti",
+      "description": "Kızarmış Mihaliç Peyniri, Kırma Zeytin, Beyaz Peynir, Kızarmış Kasap Sucuk, Domates, Yeşillik, Sıcak Süt İle Servis Edilir",
+      "price": 475.00,
+      "image": "Kahvaltı Tabakları/güne-merhaba.jpg"
+    },
+    {
+      "id": 310,
+      "name": "Protein Tabağı",
+      "category": "kahvalti",
+      "description": "Kahvaltılık Kaşar Loru, Taze Süt Kaşarı, Beyaz Peynir, Pastırma, Antrikot Füme, Pembe Domates, Yeşillik, Sıcak Süt İle Servis Edilir",
+      "price": 580.00,
+      "image": "Kahvaltı Tabakları/peynir ve fume keyfi.jpg"
+    },
+    {
+      "id": 311,
+      "name": "Şarküteri Seçkisi",
+      "category": "kahvalti",
+      "description": "Karabiberli Balkan Salamı, Dana Cotto, Pastırma, Kekikli Sucuk, İtalyan Salamı, Kavurma",
+      "price": 580.00,
+      "image": "Kahvaltı Tabakları/yoresel-kahvaltı.jpg"
+    },
+    {
+      "id": 312,
+      "name": "Fine Breakfast Plate",
+      "category": "kahvalti",
+      "description": "Manchego Peyniri, Beyaz Peynir, Eski Kaşar, Füme Dil, Kavurma, Bal Kaymak, Mix Zeytin, Reçel",
+      "price": 650.00,
+      "image": "Kahvaltı Tabakları/gurme-kahvaltı.jpg"
+    },
+    {
+      "id": 70,
+      "name": "Sade Menemen",
+      "category": "yumurta",
+      "description": "Domates, biber ve yumurta ile hazırlanmış geleneksel menemen",
+      "price": 250.00,
+      "image": "Yumurta çeşitleri/sade-menemen.jpg"
+    },
+    {
+      "id": 72,
+      "name": "Beyaz Peynirli Menemen",
+      "category": "yumurta",
+      "description": "Beyaz peynir ile hazırlanmış özel menemen",
+      "price": 275.00,
+      "image": "Yumurta çeşitleri/beyaz-peynirli-menemen.jpg"
+    },
+    {
+      "id": 71,
+      "name": "Kaşarlı Menemen",
+      "category": "yumurta",
+      "description": "Kaşar peyniri ile zenginleştirilmiş nefis menemen",
+      "price": 275.00,
+      "image": "Yumurta çeşitleri/kaşarlı-menemen.jpg"
+    },
+    {
+      "id": 201,
+      "name": "Kavurmalı Menemen",
+      "category": "yumurta",
+      "description": "Dana kavurma ile hazırlanmış nefis menemen",
+      "price": 350.00,
+      "image": "Yumurta çeşitleri/kavurmalı-menemen.jpg"
+    },
+    {
+      "id": 202,
+      "name": "Sucuklu Menemen",
+      "category": "yumurta",
+      "description": "Taze sucuk ile hazırlanmış nefis menemen",
+      "price": 350.00,
+      "image": "Yumurta çeşitleri/sucuklu-menemen.jpg"
+    },
+    {
+      "id": 203,
+      "name": "Sade Omlet",
+      "category": "yumurta",
+      "description": "Klasik sade omlet",
+      "price": 220.00,
+      "image": "Yumurta çeşitleri/sade-omlet.jpg"
+    },
+    {
+      "id": 69,
+      "name": "Kaşarlı Omlet",
+      "category": "yumurta",
+      "description": "Kaşar peyniri ile hazırlanmış klasik omlet",
+      "price": 275.00,
+      "image": "Yumurta çeşitleri/kaşarlı-omlet.jpg"
+    },
+    {
+      "id": 204,
+      "name": "Beyaz Peynirli Omlet",
+      "category": "yumurta",
+      "description": "Beyaz peynir ile hazırlanmış özel omlet",
+      "price": 275.00,
+      "image": "Yumurta çeşitleri/beyaz-peynirli-omlet.jpg"
+    },
+    {
+      "id": 200,
+      "name": "Sebzeli Omlet",
+      "category": "yumurta",
+      "description": "Taze sebzeler ve baharatlarla hazırlanmış nefis sebzeli omlet",
+      "price": 260.00,
+      "image": "Yumurta çeşitleri/sebzeli-omlet.jpg"
+    },
+    {
+      "id": 205,
+      "name": "Sucuklu Omlet",
+      "category": "yumurta",
+      "description": "Taze sucuk ile hazırlanmış nefis omlet",
+      "price": 280.00,
+      "image": "Yumurta çeşitleri/sucuklu-omlet.jpg"
+    },
+    {
+      "id": 206,
+      "name": "Kavurmalı Omlet",
+      "category": "yumurta",
+      "description": "Dana kavurma ile hazırlanmış nefis omlet",
+      "price": 280.00,
+      "image": "Yumurta çeşitleri/kavurmalı-omlet.jpg"
+    },
+    {
+      "id": 68,
+      "name": "İtalyan Pastırmalı Omlet",
+      "category": "yumurta",
+      "description": "İtalyan pastırması ve özel baharatlarla hazırlanmış nefis omlet",
+      "price": 435.00,
+      "image": "Yumurta çeşitleri/pastırmalı-omlet.jpg"
+    },
+    {
+      "id": 207,
+      "name": "Sade Yumurta",
+      "category": "yumurta",
+      "description": "Klasik sade yumurta",
+      "price": 220.00,
+      "image": "Yumurta çeşitleri/sade-yumurta.jpg"
+    },
+    {
+      "id": 208,
+      "name": "Sucuklu Yumurta",
+      "category": "yumurta",
+      "description": "Taze sucuk ile hazırlanmış nefis yumurta",
+      "price": 280.00,
+      "image": "Yumurta çeşitleri/sucuklu-yumurta.jpg"
+    },
+    {
+      "id": 209,
+      "name": "Beyaz Peynirli Yumurta",
+      "category": "yumurta",
+      "description": "Beyaz peynir ile hazırlanmış özel yumurta",
+      "price": 275.00,
+      "image": "Yumurta çeşitleri/beyaz-peynirli-yumurta.jpg"
+    },
+    {
+      "id": 210,
+      "name": "Kavurmalı Yumurta",
+      "category": "yumurta",
+      "description": "Dana kavurma ile hazırlanmış nefis yumurta",
+      "price": 280.00,
+      "image": "Yumurta çeşitleri/kavurmalı-yumurta.jpg"
+    },
+    {
+      "id": 211,
+      "name": "Kaşarlı Yumurta",
+      "category": "yumurta",
+      "description": "Kaşar peyniri ile hazırlanmış nefis yumurta",
+      "price": 250.00,
+      "image": "Yumurta çeşitleri/kaşarlı-yumurta.jpg"
+    },
+    {
+      "id": 212,
+      "name": "Sebzeli Yumurta",
+      "category": "yumurta",
+      "description": "Taze sebzeler ve baharatlarla hazırlanmış nefis sebzeli yumurta",
+      "price": 260.00,
+      "image": "Yumurta çeşitleri/sebzeli-yumurta.jpg"
+    },
+    {
+      "id": 73,
+      "name": "Pastırmalı Yumurta",
+      "category": "yumurta",
+      "description": "Taze pastırma ile hazırlanmış nefis yumurta",
+      "price": 280.00,
+      "image": "Yumurta çeşitleri/pastırmalı-yumurta.jpg"
+    },
+    {
+      "id": 102,
+      "name": "Baget Sandviç",
+      "category": "sandvicler",
+      "description": "Çıtır baget ekmek, yeşil pesto sos, şirden mayalı beyaz peynir, ispanyol geniş salam, pembe domates, roka",
+      "price": 275.00,
+      "image": "Sandviçler/baget-ssandviç.jpg"
+    },
+    {
+      "id": 103,
+      "name": "Tatlı Sandviç",
+      "category": "sandvicler",
+      "description": "Manda kaymağı, çikolata, reçel veya bal",
+      "price": 325.00,
+      "image": "Sandviçler/tatlı-sandviç.jpg"
+    },
+    {
+      "id": 104,
+      "name": "Mezeli Gurme Sandviç",
+      "category": "sandvicler",
+      "description": "Patlıcan salatası, közlenmiş biber, haydari, beyaz peynir, kavrulmuş ceviz parçaları",
+      "price": 335.00,
+      "image": "Sandviçler/mezeli-gurme-sandviç.jpg"
+    },
+    {
+      "id": 105,
+      "name": "Amerikan Salatalı Ciğer Sandviç",
+      "category": "sandvicler",
+      "description": "Ciabatta ekmeği, arnavut ciğeri ve amerikan salatası",
+      "price": 380.00,
+      "image": "Sandviçler/amerikan-ciğer-sandviç.jpg"
+    },
+    {
+      "id": 106,
+      "name": "Egedalı Sandviç",
+      "category": "sandvicler",
+      "description": "Eski kaşar peyniri, antrikot dana füme, ispanyol mezesi, zeytinyağlı kuru domates ve roka",
+      "price": 380.00,
+      "image": "Sandviçler/egedalı-sandviç.jpg"
+    },
+    {
+      "id": 107,
+      "name": "Kafkas Sandviç",
+      "category": "sandvicler",
+      "description": "İsli çerkez peyniri, boşnak kuru et, abaza peyniri, acuka, çeri domates, roka",
+      "price": 390.00,
+      "image": "Sandviçler/kafkas-sandviç.jpg"
+    },
+    {
+      "id": 108,
+      "name": "Mortadella Sandviç",
+      "category": "sandvicler",
+      "description": "Mortadella salamı, ispanyol mezesi, trakya eski kaşar, turşu, zeytinyağlı kuru domates",
+      "price": 390.00,
+      "image": "Sandviçler/mortadella-sandviç.jpg"
+    },
+    {
+      "id": 109,
+      "name": "Bergama Sofrası",
+      "category": "sandvicler",
+      "description": "Bergama tulumu, pastırma, domates, girit ezmesi, ispanyol mezesi, roka",
+      "price": 410.00,
+      "image": "Sandviçler/bergama-sofrası-sandviç.jpg"
+    },
+    {
+      "id": 111,
+      "name": "Et Füme & Pesto Sandviç",
+      "category": "sandvicler",
+      "description": "İnce dilim füme et, beyaz peynir, yeşil pesto sos, roka",
+      "price": 425.00,
+      "image": "Sandviçler/et-fume-pesto-sandviç.jpg"
+    },
+    {
+      "id": 112,
+      "name": "Kekikli Sandviç",
+      "category": "sandvicler",
+      "description": "Kekikli sucuk, abaza peyniri, amerikan salatası, çeri domates, roka",
+      "price": 425.00,
+      "image": "Sandviçler/kekikli-sandviç.jpg"
+    },
+    {
+      "id": 113,
+      "name": "Mozarella Sandviç",
+      "category": "sandvicler",
+      "description": "Boşnak kuru et, buffa manda mozarella, roka çeri domates, pesto sos",
+      "price": 450.00,
+      "image": "Sandviçler/mozzarella-sandviç.jpg"
+    },
+    {
+      "id": 114,
+      "name": "İtalyan Sandviç",
+      "category": "sandvicler",
+      "description": "İtalyan salam, sepet peyniri, italyan mezesi, kavurma, zeytinyağlı kuru domates, roka",
+      "price": 465.00,
+      "image": "Sandviçler/italyan-sandviç.jpg"
+    },
+    {
+      "id": 115,
+      "name": "Karides & Pesto Sandviç",
+      "category": "sandvicler",
+      "description": "Karides, roka, yeşil pesto sos, ince dilimlenmiş domates, tulum peyniri rendesi, üzeri nar ekşisi",
+      "price": 475.00,
+      "image": "Sandviçler/karides-pesto-sandviç.jpg"
+    },
+    {
+      "id": 305,
+      "name": "Girit Ezmeli",
+      "category": "sandvicler",
+      "description": "Girit Ezmesi, Antrikot Pastırma, Pembe Domates, Roka",
+      "price": 375.00,
+      "image": "Sandviçler/bergama-sofrası-sandviç.jpg"
+    },
+    {
+      "id": 306,
+      "name": "Izgara Mihaliç Peynirli",
+      "category": "sandvicler",
+      "description": "Izgarada Kızarmış Savaş Tepenin Mihaliç Peyniri, Düzce Ev Acukası, Kasap Sucuk ve Yeşillikler İle Servis Edilir. Bu Sandviç Sadece Masaya Servisler İçindir.",
+      "price": 425.00,
+      "image": "Sandviçler/egedalı-sandviç.jpg"
+    },
+    {
+      "id": 307,
+      "name": "Cevizli Kaşarlı",
+      "category": "sandvicler",
+      "description": "Cevizli Kaşkaval Peyniri, Dana Roasbeef, Yeşil Elmalı Pancar Salatası ve Yeşillik",
+      "price": 450.00,
+      "image": "Sandviçler/mozzarella-sandviç.jpg"
+    },
+    {
+      "id": 308,
+      "name": "Sıcak Kavurma Sandviç",
+      "category": "sandvicler",
+      "description": "Tereyağında Kavrulmuş Kavurma, Taze Süt Kaşarı, Çeri Domates, Yeşillik",
+      "price": 475.00,
+      "image": "Sandviçler/karides-pesto-sandviç.jpg"
+    },
+    {
+      "id": 216,
+      "name": "Izgara Hellim Salatası",
+      "category": "sicaklar",
+      "description": "Izgara hellim peyniri, taze sebzeler ve özel soslarla hazırlanmış salata",
+      "price": 380.00,
+      "image": "Sıcak Lezzetler/ızgara-hellim-salatası.jpg"
+    },
+    {
+      "id": 80,
+      "name": "Kıymalı Fırınlanmış Mantı",
+      "category": "sicaklar",
+      "description": "Kıymalı iç harçla hazırlanmış, fırında pişirilmiş özel mantı",
+      "price": 490.00,
+      "image": "Sıcak Lezzetler/kıymalı-mantı.png"
+    },
+    {
+      "id": 81,
+      "name": "Ekmek Üzeri Çemensiz Pastırmalı Yumurta",
+      "category": "sicaklar",
+      "description": "Taze ekmek üzerine çemensiz pastırma ve yumurta ile hazırlanmış sıcak lezzet",
+      "price": 475.00,
+      "image": "Sıcak Lezzetler/ekmek-üzeri-pastırmalı-yumurta.jpg"
+    },
+    {
+      "id": 218,
+      "name": "Patates Kızartması (Büyük)",
+      "category": "sicaklar",
+      "description": "Taze patateslerden hazırlanmış çıtır kızartma - büyük porsiyon",
+      "price": 185.00,
+      "image": "Sıcak Lezzetler/patates-kızartması.jpg"
+    },
+    {
+      "id": 219,
+      "name": "Pet Şişe Su (400 ml)",
+      "category": "icecekler",
+      "description": "Doğal kaynak suyu",
+      "price": 25.00,
+      "image": "İçecekler/uludağ-pet-su.jpg"
+    },
+    {
+      "id": 220,
+      "name": "Su (330 ml)",
+      "category": "icecekler",
+      "description": "Doğal kaynak suyu",
+      "price": 35.00,
+      "image": "İçecekler/uludağ-cam-su.jpg"
+    },
+    {
+      "id": 221,
+      "name": "Beypazarı Soda (200 ml)",
+      "category": "icecekler",
+      "description": "Doğal maden sodası",
+      "price": 30.00,
+      "image": "İçecekler/beypazarı-soda.jpg"
+    },
+    {
+      "id": 222,
+      "name": "Şevketpaşa Ayran (245 ml)",
+      "category": "icecekler",
+      "description": "Geleneksel Türk ayranı",
+      "price": 95.00,
+      "image": "İçecekler/şevketpaşa-ayran.jpg"
+    },
+    {
+      "id": 224,
+      "name": "Organik Vişne Suyu (250 ml)",
+      "category": "icecekler",
+      "description": "Doğal organik vişne suyu",
+      "price": 90.00,
+      "image": "İçecekler/vişne-suyu.jpg"
+    },
+    {
+      "id": 225,
+      "name": "Organik Portakal Suyu (250 ml)",
+      "category": "icecekler",
+      "description": "Taze sıkılmış organik portakal suyu",
+      "price": 90.00,
+      "image": "İçecekler/portakal-suyu.jpg"
+    },
+    {
+      "id": 226,
+      "name": "Organik Elma Suyu (250 ml)",
+      "category": "icecekler",
+      "description": "Doğal organik elma suyu",
+      "price": 90.00,
+      "image": "İçecekler/elma-suyu.jpg"
+    },
+    {
+      "id": 227,
+      "name": "Organik Elma-Şeftali Suyu (250 ml)",
+      "category": "icecekler",
+      "description": "Doğal organik elma-şeftali karışımı",
+      "price": 90.00,
+      "image": "İçecekler/elma-şeftali-suyu.jpg"
+    },
+    {
+      "id": 213,
+      "name": "Organik Nar Suyu (250 ml)",
+      "category": "icecekler",
+      "description": "Doğal organik nar suyu",
+      "price": 90.00,
+      "image": "İçecekler/nar-suyu.jpg"
+    },
+    {
+      "id": 86,
+      "name": "Americano (Orta Boy)",
+      "category": "icecekler",
+      "description": "Espresso ve sıcak su ile hazırlanmış Americano",
+      "price": 110.00,
+      "image": "İçecekler/americano.jpg"
+    },
+    {
+      "id": 87,
+      "name": "Espresso",
+      "category": "icecekler",
+      "description": "Yoğun ve aromatik espresso",
+      "price": 110.00,
+      "image": "İçecekler/espresso.jpg"
+    },
+    {
+      "id": 88,
+      "name": "Cafe Latte (Orta Boy)",
+      "category": "icecekler",
+      "description": "Espresso ve buharda ısıtılmış süt ile hazırlanmış latte",
+      "price": 110.00,
+      "image": "İçecekler/cafe-latte.jpg"
+    },
+    {
+      "id": 214,
+      "name": "Cortado (Orta Boy)",
+      "category": "icecekler",
+      "description": "Espresso ve az miktarda buharda ısıtılmış süt ile hazırlanmış cortado",
+      "price": 110.00,
+      "image": "İçecekler/cortado.jpg"
+    },
+    {
+      "id": 89,
+      "name": "Cappucino (Orta Boy)",
+      "category": "icecekler",
+      "description": "Espresso, buharda ısıtılmış süt ve süt köpüğü ile hazırlanmış cappucino",
+      "price": 110.00,
+      "image": "İçecekler/cappucino.jpg"
+    },
+    {
+      "id": 215,
+      "name": "Beyoğlu Gazoz (250 ml)",
+      "category": "icecekler",
+      "description": "Geleneksel Türk gazozu",
+      "price": 60.00,
+      "image": "İçecekler/beyoğlu-gazoz.jpg"
+    }
+  ],
+  "categories": {
+    "favoriler": "Favoriler",
+    "kahvalti": "Kahvaltı Tabakları",
+    "yumurta": "Yumurta Çeşitleri",
+    "sandvicler": "Sandviçler",
+    "sicaklar": "Sıcak Lezzetler",
+    "icecekler": "İçecekler"
+  }
+}
