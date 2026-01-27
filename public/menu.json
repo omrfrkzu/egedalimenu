@@ -97,38 +97,6 @@
       "image": "Kahvaltı Tabakları/güne-merhaba.jpg"
     },
     {
-      "id": 309,
-      "name": "Altınoluk Kahvaltısı",
-      "category": "kahvalti",
-      "description": "Kızarmış Mihaliç Peyniri, Kırma Zeytin, Beyaz Peynir, Kızarmış Kasap Sucuk, Domates, Yeşillik, Sıcak Süt İle Servis Edilir",
-      "price": 475.00,
-      "image": "Kahvaltı Tabakları/güne-merhaba.jpg"
-    },
-    {
-      "id": 310,
-      "name": "Protein Tabağı",
-      "category": "kahvalti",
-      "description": "Kahvaltılık Kaşar Loru, Taze Süt Kaşarı, Beyaz Peynir, Pastırma, Antrikot Füme, Pembe Domates, Yeşillik, Sıcak Süt İle Servis Edilir",
-      "price": 580.00,
-      "image": "Kahvaltı Tabakları/peynir ve fume keyfi.jpg"
-    },
-    {
-      "id": 311,
-      "name": "Şarküteri Seçkisi",
-      "category": "kahvalti",
-      "description": "Karabiberli Balkan Salamı, Dana Cotto, Pastırma, Kekikli Sucuk, İtalyan Salamı, Kavurma",
-      "price": 580.00,
-      "image": "Kahvaltı Tabakları/yoresel-kahvaltı.jpg"
-    },
-    {
-      "id": 312,
-      "name": "Fine Breakfast Plate",
-      "category": "kahvalti",
-      "description": "Manchego Peyniri, Beyaz Peynir, Eski Kaşar, Füme Dil, Kavurma, Bal Kaymak, Mix Zeytin, Reçel",
-      "price": 650.00,
-      "image": "Kahvaltı Tabakları/gurme-kahvaltı.jpg"
-    },
-    {
       "id": 70,
       "name": "Sade Menemen",
       "category": "yumurta",
@@ -391,30 +359,6 @@
       "description": "Girit Ezmesi, Antrikot Pastırma, Pembe Domates, Roka",
       "price": 375.00,
       "image": "Sandviçler/bergama-sofrası-sandviç.jpg"
-    },
-    {
-      "id": 306,
-      "name": "Izgara Mihaliç Peynirli",
-      "category": "sandvicler",
-      "description": "Izgarada Kızarmış Savaş Tepenin Mihaliç Peyniri, Düzce Ev Acukası, Kasap Sucuk ve Yeşillikler İle Servis Edilir. Bu Sandviç Sadece Masaya Servisler İçindir.",
-      "price": 425.00,
-      "image": "Sandviçler/egedalı-sandviç.jpg"
-    },
-    {
-      "id": 307,
-      "name": "Cevizli Kaşarlı",
-      "category": "sandvicler",
-      "description": "Cevizli Kaşkaval Peyniri, Dana Roasbeef, Yeşil Elmalı Pancar Salatası ve Yeşillik",
-      "price": 450.00,
-      "image": "Sandviçler/mozzarella-sandviç.jpg"
-    },
-    {
-      "id": 308,
-      "name": "Sıcak Kavurma Sandviç",
-      "category": "sandvicler",
-      "description": "Tereyağında Kavrulmuş Kavurma, Taze Süt Kaşarı, Çeri Domates, Yeşillik",
-      "price": 475.00,
-      "image": "Sandviçler/karides-pesto-sandviç.jpg"
     },
     {
       "id": 216,
