@@ -44,6 +44,30 @@ const MENU_DATA = {
       "image": "Sıcak Lezzetler/serpme-kahvaltı.jpg"
     },
     {
+      "id": 306,
+      "name": "Ekmek Üzeri Çemensiz Pastırmalı Yumurta",
+      "category": "favoriler",
+      "description": "Taze ekmek üzerine çemensiz pastırma ve yumurta ile hazırlanmış sıcak lezzet",
+      "price": 475.00,
+      "image": "Sıcak Lezzetler/ekmek-üzeri-pastırmalı-yumurta.jpg"
+    },
+    {
+      "id": 307,
+      "name": "Izgara Hellim Salatası",
+      "category": "favoriler",
+      "description": "Izgara hellim peyniri, taze sebzeler ve özel soslarla hazırlanmış salata",
+      "price": 380.00,
+      "image": "Sıcak Lezzetler/ızgara-hellim-salatası.jpg"
+    },
+    {
+      "id": 308,
+      "name": "Organik Portakal Suyu (250 ml)",
+      "category": "favoriler",
+      "description": "Taze sıkılmış organik portakal suyu",
+      "price": 90.00,
+      "image": "İçecekler/portakal-suyu.jpg"
+    },
+    {
       "id": 59,
       "name": "Yöresel Kahvaltı",
       "category": "kahvalti",
@@ -822,10 +846,18 @@ function getSortedMenuItems(category) {
             }
         });
         
-        return [...orderedItems, ...unorderedItems];
+        const result = [...orderedItems, ...unorderedItems];
+        // Favorileri azalan fiyata göre sırala
+        if (category === 'favoriler') {
+            result.sort((a, b) => b.price - a.price);
+        }
+        return result;
     }
     
     // No saved order, return original order
+    if (category === 'favoriler') {
+        return [...filteredItems].sort((a, b) => b.price - a.price);
+    }
     return filteredItems;
 }
 
