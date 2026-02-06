@@ -56,7 +56,7 @@ const MENU_DATA = {
       "name": "Izgara Hellim Salatası",
       "category": "favoriler",
       "description": "Izgara hellim peyniri, taze sebzeler ve özel soslarla hazırlanmış salata",
-      "price": 380.00,
+      "price": 450.00,
       "image": "Sıcak Lezzetler/ızgara-hellim-salatası.jpg"
     },
     {
@@ -64,15 +64,15 @@ const MENU_DATA = {
       "name": "Organik Portakal Suyu (250 ml)",
       "category": "favoriler",
       "description": "Taze sıkılmış organik portakal suyu",
-      "price": 90.00,
+      "price": 120.00,
       "image": "İçecekler/portakal-suyu.jpg"
     },
     {
       "id": 59,
       "name": "Yöresel Kahvaltı",
       "category": "kahvalti",
-      "description": "Yaban mersinli tulum, trakya eski kaşar, dil peyniri, taze süt kaşarı, haşlanmış yumurta, balkan salam, pastırma, hindi füme",
-      "price": 625.00,
+      "description": "Cevizli taze kaşar, Yaban mersinli tulum, Trakya eski kaşar, Dil peyniri, Haşlanmış yumurta, Balkan salam, Pastırma, Kavurma, Zahterli zeytin salatası, Acuka, Bal kaymak",
+      "price": 650.00,
       "image": "Kahvaltı Tabakları/yoresel-kahvaltı.jpg"
     },
     {
@@ -124,6 +124,22 @@ const MENU_DATA = {
       "image": "Kahvaltı Tabakları/güne-merhaba.jpg"
     },
     {
+      "id": 310,
+      "name": "Köyden Sofraya",
+      "category": "kahvalti",
+      "description": "Beyaz peynir, Çeçil peyniri, Kızarmış hellim peyniri, Bal tereyağ, Tadı bu çikolata, Acuka, Zahterli zeytin, Zeytinyağlı söğüş haşlanmış yumurta",
+      "price": 600.00,
+      "image": "Kahvaltı Tabakları/koyden-sofraya.jpg"
+    },
+    {
+      "id": 311,
+      "name": "Köy Ateşi",
+      "category": "kahvalti",
+      "description": "Kızarmış hellim, Antrikot füme, Pancar salatası yeşil elmalı, Kavrulmuş ceviz içi, Söğüş",
+      "price": 675.00,
+      "image": "Kahvaltı Tabakları/köy-atesi.jpg"
+    },
+    {
       "id": 70,
       "name": "Sade Menemen",
       "category": "yumurta",
@@ -152,7 +168,7 @@ const MENU_DATA = {
       "name": "Kavurmalı Menemen",
       "category": "yumurta",
       "description": "Dana kavurma ile hazırlanmış nefis menemen",
-      "price": 350.00,
+      "price": 370.00,
       "image": "Yumurta çeşitleri/kavurmalı-menemen.jpg"
     },
     {
@@ -160,7 +176,7 @@ const MENU_DATA = {
       "name": "Sucuklu Menemen",
       "category": "yumurta",
       "description": "Taze sucuk ile hazırlanmış nefis menemen",
-      "price": 350.00,
+      "price": 370.00,
       "image": "Yumurta çeşitleri/sucuklu-menemen.jpg"
     },
     {
@@ -168,7 +184,7 @@ const MENU_DATA = {
       "name": "Sade Omlet",
       "category": "yumurta",
       "description": "Klasik sade omlet",
-      "price": 220.00,
+      "price": 250.00,
       "image": "Yumurta çeşitleri/sade-omlet.jpg"
     },
     {
@@ -192,7 +208,7 @@ const MENU_DATA = {
       "name": "Sebzeli Omlet",
       "category": "yumurta",
       "description": "Taze sebzeler ve baharatlarla hazırlanmış nefis sebzeli omlet",
-      "price": 260.00,
+      "price": 275.00,
       "image": "Yumurta çeşitleri/sebzeli-omlet.jpg"
     },
     {
@@ -200,7 +216,7 @@ const MENU_DATA = {
       "name": "Sucuklu Omlet",
       "category": "yumurta",
       "description": "Taze sucuk ile hazırlanmış nefis omlet",
-      "price": 280.00,
+      "price": 370.00,
       "image": "Yumurta çeşitleri/sucuklu-omlet.jpg"
     },
     {
@@ -208,7 +224,7 @@ const MENU_DATA = {
       "name": "Kavurmalı Omlet",
       "category": "yumurta",
       "description": "Dana kavurma ile hazırlanmış nefis omlet",
-      "price": 280.00,
+      "price": 370.00,
       "image": "Yumurta çeşitleri/kavurmalı-omlet.jpg"
     },
     {
@@ -216,7 +232,7 @@ const MENU_DATA = {
       "name": "İtalyan Pastırmalı Omlet",
       "category": "yumurta",
       "description": "İtalyan pastırması ve özel baharatlarla hazırlanmış nefis omlet",
-      "price": 435.00,
+      "price": 450.00,
       "image": "Yumurta çeşitleri/pastırmalı-omlet.jpg"
     },
     {
@@ -224,7 +240,7 @@ const MENU_DATA = {
       "name": "Sade Yumurta",
       "category": "yumurta",
       "description": "Klasik sade yumurta",
-      "price": 220.00,
+      "price": 250.00,
       "image": "Yumurta çeşitleri/sade-yumurta.jpg"
     },
     {
@@ -232,7 +248,7 @@ const MENU_DATA = {
       "name": "Sucuklu Yumurta",
       "category": "yumurta",
       "description": "Taze sucuk ile hazırlanmış nefis yumurta",
-      "price": 280.00,
+      "price": 370.00,
       "image": "Yumurta çeşitleri/sucuklu-yumurta.jpg"
     },
     {
@@ -248,7 +264,7 @@ const MENU_DATA = {
       "name": "Kavurmalı Yumurta",
       "category": "yumurta",
       "description": "Dana kavurma ile hazırlanmış nefis yumurta",
-      "price": 280.00,
+      "price": 370.00,
       "image": "Yumurta çeşitleri/kavurmalı-yumurta.jpg"
     },
     {
@@ -256,7 +272,7 @@ const MENU_DATA = {
       "name": "Kaşarlı Yumurta",
       "category": "yumurta",
       "description": "Kaşar peyniri ile hazırlanmış nefis yumurta",
-      "price": 250.00,
+      "price": 275.00,
       "image": "Yumurta çeşitleri/kaşarlı-yumurta.jpg"
     },
     {
@@ -264,7 +280,7 @@ const MENU_DATA = {
       "name": "Sebzeli Yumurta",
       "category": "yumurta",
       "description": "Taze sebzeler ve baharatlarla hazırlanmış nefis sebzeli yumurta",
-      "price": 260.00,
+      "price": 275.00,
       "image": "Yumurta çeşitleri/sebzeli-yumurta.jpg"
     },
     {
@@ -272,7 +288,7 @@ const MENU_DATA = {
       "name": "Pastırmalı Yumurta",
       "category": "yumurta",
       "description": "Taze pastırma ile hazırlanmış nefis yumurta",
-      "price": 280.00,
+      "price": 370.00,
       "image": "Yumurta çeşitleri/pastırmalı-yumurta.jpg"
     },
     {
@@ -388,11 +404,19 @@ const MENU_DATA = {
       "image": "Sandviçler/bergama-sofrası-sandviç.jpg"
     },
     {
+      "id": 309,
+      "name": "Kızarmış Hellim Tabağı",
+      "category": "sicaklar",
+      "description": "Kızarmış hellim peyniri tabağı",
+      "price": 380.00,
+      "image": "Sıcak Lezzetler/ızgara-hellim-tabağı.jpg"
+    },
+    {
       "id": 216,
       "name": "Izgara Hellim Salatası",
       "category": "sicaklar",
       "description": "Izgara hellim peyniri, taze sebzeler ve özel soslarla hazırlanmış salata",
-      "price": 380.00,
+      "price": 450.00,
       "image": "Sıcak Lezzetler/ızgara-hellim-salatası.jpg"
     },
     {
@@ -400,7 +424,7 @@ const MENU_DATA = {
       "name": "Kıymalı Fırınlanmış Mantı",
       "category": "sicaklar",
       "description": "Kıymalı iç harçla hazırlanmış, fırında pişirilmiş özel mantı",
-      "price": 490.00,
+      "price": 460.00,
       "image": "Sıcak Lezzetler/kıymalı-mantı.png"
     },
     {
@@ -416,7 +440,7 @@ const MENU_DATA = {
       "name": "Patates Kızartması (Büyük)",
       "category": "sicaklar",
       "description": "Taze patateslerden hazırlanmış çıtır kızartma - büyük porsiyon",
-      "price": 185.00,
+      "price": 250.00,
       "image": "Sıcak Lezzetler/patates-kızartması.jpg"
     },
     {
@@ -424,16 +448,8 @@ const MENU_DATA = {
       "name": "Pet Şişe Su (400 ml)",
       "category": "icecekler",
       "description": "Doğal kaynak suyu",
-      "price": 25.00,
-      "image": "İçecekler/uludağ-pet-su.jpg"
-    },
-    {
-      "id": 220,
-      "name": "Su (330 ml)",
-      "category": "icecekler",
-      "description": "Doğal kaynak suyu",
       "price": 35.00,
-      "image": "İçecekler/uludağ-cam-su.jpg"
+      "image": "İçecekler/uludağ-pet-su.jpg"
     },
     {
       "id": 221,
@@ -445,7 +461,7 @@ const MENU_DATA = {
     },
     {
       "id": 222,
-      "name": "Şevketpaşa Ayran (245 ml)",
+      "name": "Yayık Ayran (245 ml)",
       "category": "icecekler",
       "description": "Geleneksel Türk ayranı",
       "price": 95.00,
@@ -456,7 +472,7 @@ const MENU_DATA = {
       "name": "Organik Vişne Suyu (250 ml)",
       "category": "icecekler",
       "description": "Doğal organik vişne suyu",
-      "price": 90.00,
+      "price": 120.00,
       "image": "İçecekler/vişne-suyu.jpg"
     },
     {
@@ -464,7 +480,7 @@ const MENU_DATA = {
       "name": "Organik Portakal Suyu (250 ml)",
       "category": "icecekler",
       "description": "Taze sıkılmış organik portakal suyu",
-      "price": 90.00,
+      "price": 120.00,
       "image": "İçecekler/portakal-suyu.jpg"
     },
     {
@@ -472,7 +488,7 @@ const MENU_DATA = {
       "name": "Organik Elma Suyu (250 ml)",
       "category": "icecekler",
       "description": "Doğal organik elma suyu",
-      "price": 90.00,
+      "price": 120.00,
       "image": "İçecekler/elma-suyu.jpg"
     },
     {
@@ -480,7 +496,7 @@ const MENU_DATA = {
       "name": "Organik Elma-Şeftali Suyu (250 ml)",
       "category": "icecekler",
       "description": "Doğal organik elma-şeftali karışımı",
-      "price": 90.00,
+      "price": 120.00,
       "image": "İçecekler/elma-şeftali-suyu.jpg"
     },
     {
@@ -488,7 +504,7 @@ const MENU_DATA = {
       "name": "Organik Nar Suyu (250 ml)",
       "category": "icecekler",
       "description": "Doğal organik nar suyu",
-      "price": 90.00,
+      "price": 120.00,
       "image": "İçecekler/nar-suyu.jpg"
     },
     {
@@ -496,7 +512,7 @@ const MENU_DATA = {
       "name": "Americano (Orta Boy)",
       "category": "icecekler",
       "description": "Espresso ve sıcak su ile hazırlanmış Americano",
-      "price": 110.00,
+      "price": 150.00,
       "image": "İçecekler/americano.jpg"
     },
     {
@@ -504,7 +520,7 @@ const MENU_DATA = {
       "name": "Espresso",
       "category": "icecekler",
       "description": "Yoğun ve aromatik espresso",
-      "price": 110.00,
+      "price": 150.00,
       "image": "İçecekler/espresso.jpg"
     },
     {
@@ -512,7 +528,7 @@ const MENU_DATA = {
       "name": "Cafe Latte (Orta Boy)",
       "category": "icecekler",
       "description": "Espresso ve buharda ısıtılmış süt ile hazırlanmış latte",
-      "price": 110.00,
+      "price": 150.00,
       "image": "İçecekler/cafe-latte.jpg"
     },
     {
@@ -520,7 +536,7 @@ const MENU_DATA = {
       "name": "Cortado (Orta Boy)",
       "category": "icecekler",
       "description": "Espresso ve az miktarda buharda ısıtılmış süt ile hazırlanmış cortado",
-      "price": 110.00,
+      "price": 150.00,
       "image": "İçecekler/cortado.jpg"
     },
     {
@@ -528,7 +544,7 @@ const MENU_DATA = {
       "name": "Cappucino (Orta Boy)",
       "category": "icecekler",
       "description": "Espresso, buharda ısıtılmış süt ve süt köpüğü ile hazırlanmış cappucino",
-      "price": 110.00,
+      "price": 150.00,
       "image": "İçecekler/cappucino.jpg"
     },
     {
